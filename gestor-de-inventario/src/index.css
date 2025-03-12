@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+html,body,#root{
+    width: 100%;
+    height: 100%;
+  }
+  
+
+.asidemenu::-webkit-scrollbar {
+  width: 8px;
+}
+
+
+
+
+.asidemenu::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.asidemenu::-webkit-scrollbar-thumb {
+  background: #3f3f3f ;
+  border-radius: 10px;
+}
