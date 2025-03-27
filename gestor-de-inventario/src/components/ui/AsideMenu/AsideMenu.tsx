@@ -67,8 +67,8 @@ export default function AsideMenu(){
                 <AsideMenuButton text="Capturar inventario fisico" icon = {CapturarInventarioFisicoIcon}></AsideMenuButton>
                 <AsideMenuButton text="Historico" icon = {HistoricoIcon}></AsideMenuButton>
                 <AsideMenuButton text="Fisico VS Kardex" icon = {FisicoKardexIcon}></AsideMenuButton>
-            </AsideMenuSection>
-            
+            </AsideMenuSection>     
+            ñ
             
             <AsideMenuSection title="POLIZAS">
                 <AsideMenuButton text="Poliza contable" icon = {PolizaContableIcon}></AsideMenuButton>
@@ -78,7 +78,7 @@ export default function AsideMenu(){
             <AsideMenuSection title="REPORTES">
                 <AsideMenuButton text="Analiticos" icon = {AnaliticosIcon}></AsideMenuButton>
                 <AsideMenuButton text="Resumens" icon = {ResumenIcon}></AsideMenuButton>
-                <AsideMenuButton text="Ventas" icon = {VentasIcon}></AsideMenuButton>
+                <AsideMenuButton text="Ventas" icon = {VentasIcon}></AsideMenuButton>           
                 <AsideMenuButton text="Existencias" icon = {ExistenciasIcon}></AsideMenuButton>
                 <AsideMenuButton text="Movimientos" icon = {MovimientosIcon}></AsideMenuButton>
                 <AsideMenuButton text="Articulos" icon = {ArticulosIcon}></AsideMenuButton>
