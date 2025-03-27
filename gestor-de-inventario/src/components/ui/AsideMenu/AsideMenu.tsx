@@ -68,7 +68,6 @@ export default function AsideMenu(){
                 <AsideMenuButton text="Historico" icon = {HistoricoIcon}></AsideMenuButton>
                 <AsideMenuButton text="Fisico VS Kardex" icon = {FisicoKardexIcon}></AsideMenuButton>
             </AsideMenuSection>     
-            ñ
             
             <AsideMenuSection title="POLIZAS">
                 <AsideMenuButton text="Poliza contable" icon = {PolizaContableIcon}></AsideMenuButton>
