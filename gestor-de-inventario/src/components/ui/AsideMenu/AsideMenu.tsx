@@ -33,8 +33,8 @@ import AsideMenuButton from "./AsideMenuButton";
 import AsideMenuSection from "./AsideMenuSection"; //Importamos el componente AsideMenuSection
 export default function AsideMenu(){ 
     return( 
-        <aside className="h-full w-[15%] bg-[#154f3a] flex flex-col gap-10 overflow-auto pt-5 pb-6 asidemenu">
-
+        <aside className="h-full w-[15%] bg-[#154f3a] flex flex-col gap-10 overflow-auto pt-5 pb-6 asidemenu"> 
+            {/* Contenedor aside que contendra  */}
             <AsideMenuSection title="MODULO SUCURSAL">
                 <AsideMenuButton text="Inicio" icon = {InicioIcon}></AsideMenuButton>
             </AsideMenuSection>
