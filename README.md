@@ -9,5 +9,5 @@
 
 - [@Braulio Perez Compean](https://www.github.com/ghstll)
 
-- [@El nombre va aqui](https://www.github.com) //Test
+- [@El nombre completo va aqui](https://www.github.com) //El url a tu github va aqui
 
