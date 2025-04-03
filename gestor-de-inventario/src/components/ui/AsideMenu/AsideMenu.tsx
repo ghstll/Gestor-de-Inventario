@@ -15,6 +15,7 @@ import HistoricoIcon from '../../../assets/HistoricoIcon.svg';
 import InicioIcon from '../../../assets/home.svg';
 import InventarioTeoricoIcon from '../../../assets/InventarioTeoricoIcon.svg';
 import MermasIcon from '../../../assets/MermasIcon.svg';
+import MoonIcon from '../../../assets/moon.svg';
 import MovimientosIcon from '../../../assets/MovimientosIcon.svg';
 import OrdenesDeCompraIcon from '../../../assets/OrdenesDeCompraIcon.svg';
 import PolizaContableIcon from '../../../assets/PolizaContableIcon.svg';
@@ -31,66 +32,68 @@ import '../../../index.css';
 
 import AsideMenuButton from "./AsideMenuButton";
 import AsideMenuSection from "./AsideMenuSection"; //Importamos el componente AsideMenuSection
-export default function AsideMenu(){ 
+export default function AsideMenu({toggleDarkMode , darkMode} : {toggleDarkMode : () => void, darkMode : boolean}){ 
     return( 
-        <aside className="h-full w-[15%] bg-[#154f3a] flex flex-col gap-10 overflow-auto pt-5 pb-6 asidemenu"> 
+        <aside className={`h-screen w-[280px] flex flex-col gap-10 overflow-auto pt-5 pb-6 asidemenu ${darkMode ? "bg-black text-white border-r border-white" : "bg-[#154f3a] border-r border-transparent"} duration-700`}> 
             {/* Contenedor aside que contendra  */}
             <AsideMenuSection title="MODULO SUCURSAL">
-                <AsideMenuButton text="Inicio" icon = {InicioIcon}></AsideMenuButton>
+                <AsideMenuButton darkMode = {darkMode} text="Inicio" icon = {InicioIcon}></AsideMenuButton>
             </AsideMenuSection>
             
             
             <AsideMenuSection title="OPERACIONES">
-                <AsideMenuButton text="Ordenes de compra" icon = {OrdenesDeCompraIcon}></AsideMenuButton>
-                <AsideMenuButton text="Recepciones" icon = {RecepcionesIcon}></AsideMenuButton>
-                <AsideMenuButton text="Devoluciones" icon = {DevolucionesIcon}></AsideMenuButton>
-                <AsideMenuButton text="Mermas" icon = {MermasIcon}></AsideMenuButton>
-                <AsideMenuButton text="Siniestros" icon = {SiniestrosIcon}></AsideMenuButton>
-                <AsideMenuButton text="Transferencias" icon = {TransferenciasIcon}></AsideMenuButton>
+                <AsideMenuButton darkMode = {darkMode} text="Ordenes de compra" icon = {OrdenesDeCompraIcon}></AsideMenuButton>
+                <AsideMenuButton darkMode = {darkMode} text="Recepciones" icon = {RecepcionesIcon}></AsideMenuButton>
+                <AsideMenuButton darkMode = {darkMode} text="Devoluciones" icon = {DevolucionesIcon}></AsideMenuButton>
+                <AsideMenuButton darkMode = {darkMode} text="Mermas" icon = {MermasIcon}></AsideMenuButton>
+                <AsideMenuButton darkMode = {darkMode} text="Siniestros" icon = {SiniestrosIcon}></AsideMenuButton>
+                <AsideMenuButton darkMode = {darkMode} text="Transferencias" icon = {TransferenciasIcon}></AsideMenuButton>
             </AsideMenuSection>
             
             
             <AsideMenuSection title="VENTAS">
-                <AsideMenuButton text="Registrar" icon = {RegistrarIcon}></AsideMenuButton>
-                <AsideMenuButton text="Consultar" icon = {ConsultarIcon}></AsideMenuButton>
-                <AsideMenuButton text="Ajustar" icon = {AjustarIcon}></AsideMenuButton>
+                <AsideMenuButton darkMode = {darkMode} text="Registrar" icon = {RegistrarIcon}></AsideMenuButton>
+                <AsideMenuButton darkMode = {darkMode} text="Consultar" icon = {ConsultarIcon}></AsideMenuButton>
+                <AsideMenuButton darkMode = {darkMode} text="Ajustar" icon = {AjustarIcon}></AsideMenuButton>
             </AsideMenuSection>
             
             
             <AsideMenuSection title="KARDEX">
-                <AsideMenuButton text="Consultar kardex" icon = {ConsultarKardexIcon}></AsideMenuButton>
-                <AsideMenuButton text="Inventario teorico" icon = {InventarioTeoricoIcon}></AsideMenuButton>
-            </AsideMenuSection>
+                <AsideMenuButton darkMode = {darkMode} text="Consultar kardex" icon = {ConsultarKardexIcon}></AsideMenuButton>
+                <AsideMenuButton darkMode = {darkMode} text="Inventario teorico" icon = {InventarioTeoricoIcon}></AsideMenuButton>
+            </AsideMenuSection> 
             
             
             <AsideMenuSection title="INVENTARIO FISICO">
-                <AsideMenuButton text="Capturar inventario fisico" icon = {CapturarInventarioFisicoIcon}></AsideMenuButton>
-                <AsideMenuButton text="Historico" icon = {HistoricoIcon}></AsideMenuButton>
-                <AsideMenuButton text="Fisico VS Kardex" icon = {FisicoKardexIcon}></AsideMenuButton>
+                <AsideMenuButton darkMode = {darkMode} text="Capturar inventario fisico" icon = {CapturarInventarioFisicoIcon}></AsideMenuButton>
+                <AsideMenuButton darkMode = {darkMode} text="Historico" icon = {HistoricoIcon}></AsideMenuButton>
+                <AsideMenuButton darkMode = {darkMode} text="Fisico VS Kardex" icon = {FisicoKardexIcon}></AsideMenuButton>
             </AsideMenuSection>     
             
             <AsideMenuSection title="POLIZAS">
-                <AsideMenuButton text="Poliza contable" icon = {PolizaContableIcon}></AsideMenuButton>
+                <AsideMenuButton darkMode = {darkMode} text="Poliza contable" icon = {PolizaContableIcon}></AsideMenuButton>
             </AsideMenuSection>
             
             
             <AsideMenuSection title="REPORTES">
-                <AsideMenuButton text="Analiticos" icon = {AnaliticosIcon}></AsideMenuButton>
-                <AsideMenuButton text="Resumens" icon = {ResumenIcon}></AsideMenuButton>
-                <AsideMenuButton text="Ventas" icon = {VentasIcon}></AsideMenuButton>           
-                <AsideMenuButton text="Existencias" icon = {ExistenciasIcon}></AsideMenuButton>
-                <AsideMenuButton text="Movimientos" icon = {MovimientosIcon}></AsideMenuButton>
-                <AsideMenuButton text="Articulos" icon = {ArticulosIcon}></AsideMenuButton>
-                <AsideMenuButton text="Articulos a granel" icon = {ArticulosAGranelIcon}></AsideMenuButton>
-                <AsideMenuButton text="Proveedores" icon = {ProveedoresIcon}></AsideMenuButton>
-                <AsideMenuButton text="Cambios de precio" icon = {CambiosDePrecioIcon}></AsideMenuButton>
+                <AsideMenuButton darkMode = {darkMode} text="Analiticos" icon = {AnaliticosIcon}></AsideMenuButton>
+                <AsideMenuButton darkMode = {darkMode} text="Resumens" icon = {ResumenIcon}></AsideMenuButton>
+                <AsideMenuButton darkMode = {darkMode} text="Ventas" icon = {VentasIcon}></AsideMenuButton>           
+                <AsideMenuButton darkMode = {darkMode} text="Existencias" icon = {ExistenciasIcon}></AsideMenuButton>
+                <AsideMenuButton darkMode = {darkMode} text="Movimientos" icon = {MovimientosIcon}></AsideMenuButton>
+                <AsideMenuButton darkMode = {darkMode} text="Articulos" icon = {ArticulosIcon}></AsideMenuButton>
+                <AsideMenuButton darkMode = {darkMode} text="Articulos a granel" icon = {ArticulosAGranelIcon}></AsideMenuButton>
+                <AsideMenuButton darkMode = {darkMode} text="Proveedores" icon = {ProveedoresIcon}></AsideMenuButton>
+                <AsideMenuButton darkMode = {darkMode} text="Cambios de precio" icon = {CambiosDePrecioIcon}></AsideMenuButton>
             </AsideMenuSection>
             
             
             <AsideMenuSection title="MI CUENTA">
-                <AsideMenuButton text="Cambiar contraseña" icon = {CambiarContraseñaIcon}></AsideMenuButton>
+                <AsideMenuButton darkMode = {darkMode} text="Cambiar contraseña" icon = {CambiarContraseñaIcon}></AsideMenuButton>
             </AsideMenuSection>
-        
+            <AsideMenuSection title='Preferencia'>
+                <AsideMenuButton darkMode = {darkMode} onClickFunc={toggleDarkMode} text='Modo Oscuro ' icon={MoonIcon}></AsideMenuButton>
+            </AsideMenuSection>
         
         </aside>     
         
