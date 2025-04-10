@@ -5,10 +5,11 @@ import FormParamsReportEstado from "../../FormParamsReport/FormParamsReportEstad
 import FormParamsReportFolioRange from "../../FormParamsReport/FormParamsReportFolioRange";
 import FormParamsReportProveedor from "../../FormParamsReport/FormParamsReportProveedor";
 import ReportLog from "../../logs/ReportLog";
+
 function OrdenesDeCompraPage({ darkMode }: { darkMode: boolean }) {
     return (
         <main
-            className={`overflow-auto h-fit w-full flex gap-8 justify-center p-4 ${
+            className={`overflow-auto h-full w-full flex gap-8  p-4 ${
                 darkMode ? "bg-black text-white" : "bg-white text-black"
             } duration-700`}
         >
@@ -19,10 +20,9 @@ function OrdenesDeCompraPage({ darkMode }: { darkMode: boolean }) {
                 <FormParamsReportDepartamento></FormParamsReportDepartamento>
                 <FormParamsReportEstado></FormParamsReportEstado>
             </FormParamsReportContainer>
-            <ReportLog></ReportLog>
-
+            <ReportLog></ReportLog>     
         </main>
-    );
+    );  
 }
 
 export default OrdenesDeCompraPage;
