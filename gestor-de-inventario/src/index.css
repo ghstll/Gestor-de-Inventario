@@ -25,3 +25,45 @@ html,body,#root{
   background: #3f3f3f ;
   border-radius: 10px;
 }
+
+
+
+
+#section-comps::-webkit-scrollbar {
+  width: 2px;
+}
+
+
+
+
+#section-comps::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#section-comps::-webkit-scrollbar-thumb {
+  background: #3f3f3f ;
+  border-radius: 20px;
+}
+
+
+
+
+
+#recent-activity::-webkit-scrollbar {
+  width: 2px;
+}
+
+
+
+
+#recent-activity::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#recent-activity::-webkit-scrollbar-thumb {
+  background: #3f3f3f ;
+  border-radius: 20px;
+}
+
+
+

@@ -1,0 +1,120 @@
+[
+  {
+    "tipoReporte": "Analíticos",
+    "periodicidad": 1,
+    "formato": ["PDF", "Excel"],
+    "destinatarios": ["analitica@empresa.com"],
+    "horaEnvio": "08:00",
+    "activo": true,
+    "ultimaGeneracion": "16-04-25",
+    "proximaGeneracion": "17-04-25",
+    "filtros": {
+      "rangoFechas": "últimos 7 días"
+    }
+  },
+  {
+    "tipoReporte": "Resúmenes",
+    "periodicidad": 7,
+    "formato": ["PDF", "Excel"],
+    "destinatarios": ["gerencia@empresa.com", "finanzas@empresa.com"],
+    "horaEnvio": "09:30",
+    "activo": true,
+    "ultimaGeneracion": "14-04-25",
+    "proximaGeneracion": "21-04-25",
+    "filtros": {
+      "sucursal": "Todas"
+    }
+  },
+  {
+    "tipoReporte": "Ventas",
+    "periodicidad": 30,
+    "formato": ["PDF", "CSV"],
+    "destinatarios": ["ventas@empresa.com"],
+    "horaEnvio": "07:45",
+    "activo": true,
+    "ultimaGeneracion": "01-04-25",
+    "proximaGeneracion": "01-05-25",
+    "filtros": {
+      "sucursal": "Sucursal Norte",
+      "productoTop": 10
+    }
+  },
+  {
+    "tipoReporte": "Existencias",
+    "periodicidad": 7,
+    "formato": ["Excel", "CSV"],
+    "destinatarios": ["almacen@empresa.com"],
+    "horaEnvio": "06:30",
+    "activo": true,
+    "ultimaGeneracion": "15-04-25",
+    "proximaGeneracion": "22-04-25",
+    "filtros": {
+      "stockMinimo": true
+    }
+  },
+  {
+    "tipoReporte": "Movimiento s",
+    "periodicidad": 1,
+    "formato": ["CSV"],
+    "destinatarios": ["operaciones@empresa.com"],
+    "horaEnvio": "20:00",
+    "activo": false,
+    "ultimaGeneracion": "16-04-25",
+    "proximaGeneracion": "17-04-25",
+    "filtros": {
+      "tipoMovimiento": ["entrada", "salida"]
+    }
+  },
+  {
+    "tipoReporte": "Artículos",
+    "periodicidad": 30,
+    "formato": ["PDF", "Excel"],
+    "destinatarios": ["catalogo@empresa.com"],
+    "horaEnvio": "10:00",
+    "activo": true,
+    "ultimaGeneracion": "02-04-25",
+    "proximaGeneracion": "02-05-25",
+    "filtros": {
+      "categoria": "General"
+    }
+  },
+  {
+    "tipoReporte": "Artículos a granel",
+    "periodicidad": 15,
+    "formato": ["PDF"],
+    "destinatarios": ["controlgranel@empresa.com"],
+    "horaEnvio": "11:15",
+    "activo": true,
+    "ultimaGeneracion": "10-04-25",
+    "proximaGeneracion": "25-04-25",
+    "filtros": {
+      "unidadMedida": "kg"
+    }
+  },
+  {
+    "tipoReporte": "Proveedores",
+    "periodicidad": 30,
+    "formato": ["PDF", "Excel"],
+    "destinatarios": ["compras@empresa.com"],
+    "horaEnvio": "12:00",
+    "activo": true,
+    "ultimaGeneracion": "05-04-25",
+    "proximaGeneracion": "05-05-25",
+    "filtros": {
+      "proveedorActivo": true
+    }
+  },
+  {
+    "tipoReporte": "Cambios de precio",
+    "periodicidad": 7,
+    "formato": ["PDF", "Excel", "CSV"],
+    "destinatarios": ["precios@empresa.com"],
+    "horaEnvio": "08:30",
+    "activo": true,
+    "ultimaGeneracion": "15-04-25",
+    "proximaGeneracion": "22-04-25",
+    "filtros": {
+      "cambioDesde": "últimos 30 días"
+    }
+  }
+]

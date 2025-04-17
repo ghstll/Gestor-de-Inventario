@@ -23,7 +23,7 @@ import ProveedoresIcon from '../../../assets/ProveedoresIcon.svg';
 import RecepcionesIcon from '../../../assets/RecepcionesIcon.svg';
 import RegistrarIcon from '../../../assets/RegistrarIcon.svg';
 import ResumenIcon from '../../../assets/ResumenIcon.svg';
-import BotIcon from '../../../assets/robot.svg';
+import BotIcon from '../../../assets/robot2.svg';
 import SiniestrosIcon from '../../../assets/SiniestrosIcon.svg';
 import TransferenciasIcon from '../../../assets/TransferenciasIcon.svg';
 import VentasIcon from '../../../assets/VentasIcon.svg';
@@ -35,14 +35,14 @@ import AsideMenuButton from "./AsideMenuButton";
 import AsideMenuSection from "./AsideMenuSection"; //Importamos el componente AsideMenuSection
 export default function AsideMenu({toggleDarkMode , setCurrentPage ,darkMode} : {toggleDarkMode : () => void,setCurrentPage : (page : string ) => void  ,darkMode : boolean}){ 
     return( 
-        <aside className={`h-screen w-[280px] flex flex-col gap-10 overflow-auto pt-5 pb-6 asidemenu ${darkMode ? "bg-black text-white border-r border-white" : "bg-[#154f3a] border-r border-transparent"} duration-700`}> 
+        <aside className={`h-screen w-[240px] flex flex-col gap-10 overflow-auto pt-5 pb-6 asidemenu ${darkMode ? "bg-black text-white border-r border-white" : "bg-[#154f3a] border-r border-transparent"} duration-700`}> 
             {/* Contenedor aside que contendra  */}
             <AsideMenuSection title="MODULO SUCURSAL">
                 <AsideMenuButton onClickFunc={() => setCurrentPage('Inicio')} darkMode = {darkMode} text="Inicio" icon = {InicioIcon}></AsideMenuButton>
             </AsideMenuSection>
             
-            
-            <AsideMenuSection title="OPERACIONES">
+
+            <AsideMenuSection title="OPERACIONES">      
                 <AsideMenuButton onClickFunc={() => setCurrentPage('OrdenesDeCompra')} darkMode = {darkMode} text="Ordenes de compra" icon = {OrdenesDeCompraIcon}></AsideMenuButton>
                 <AsideMenuButton darkMode = {darkMode} text="Recepciones" icon = {RecepcionesIcon}></AsideMenuButton>
                 <AsideMenuButton darkMode = {darkMode} text="Devoluciones" icon = {DevolucionesIcon}></AsideMenuButton>

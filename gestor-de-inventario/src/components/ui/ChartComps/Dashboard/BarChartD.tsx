@@ -3,48 +3,13 @@ import {
     BarChart,
     CartesianGrid,
     Cell,
+    ResponsiveContainer,
     Tooltip,
     XAxis,
     YAxis
 } from "recharts";
 
-const bajoStockData = [
-    { producto: "Camiseta Blanca", Cantidad: 5 },
-    { producto: "Pantalón Jeans", Cantidad: 3 },
-    { producto: "Tenis Urbanos", Cantidad: 2 },
-    { producto: "Zapatos de Cuero", Cantidad: 1 },
-    { producto: "Mouse Inalámbrico", Cantidad: 4 },
-    { producto: "Teclado Mecánico", Cantidad: 6 },
-    { producto: "Silla Ergonómica", Cantidad: 2 },
-    { producto: "Escritorio Compacto", Cantidad: 3 },
-    { producto: "Shampoo Anticaspa", Cantidad: 7 },
-    { producto: "Pasta Dental", Cantidad: 5 },
-    { producto: "Cargador de Celular", Cantidad: 2 },
-    { producto: "Auriculares Bluetooth", Cantidad: 1 },
-    { producto: "Cámara Web", Cantidad: 3 },
-    { producto: "Ratón Gamer", Cantidad: 4 },
-    { producto: "Mochila Deportiva", Cantidad: 2 },
-    { producto: "Camiseta Deportiva", Cantidad: 1 },
-    { producto: "Chaqueta de Invierno", Cantidad: 5 },
-    { producto: "Sudadera Con Capucha", Cantidad: 3 },
-    { producto: "Batería Externa", Cantidad: 6 },
-    { producto: "Altavoces Portátiles", Cantidad: 2 },
-    { producto: "Lentes de Sol", Cantidad: 4 },
-    { producto: "Reloj Inteligente", Cantidad: 1 },
-    { producto: "Botellas Térmicas", Cantidad: 7 },
-    { producto: "Calcetines Deportivos", Cantidad: 5 },
-    { producto: "Gorra Deportiva", Cantidad: 2 },
-    { producto: "Zapatos de Running", Cantidad: 3 },
-    { producto: "Pantalón Corto Deportivo", Cantidad: 2 },
-    { producto: "Chaqueta Impermeable", Cantidad: 1 },
-    { producto: "Guantes de Invierno", Cantidad: 4 },
-    { producto: "Mochila de Senderismo", Cantidad: 5 },
-    { producto: "Linterna LED", Cantidad: 3 },
-    { producto: "Chaqueta de Plumas", Cantidad: 2 },
-    { producto: "Botines de Fútbol", Cantidad: 1 },
-];
-
-
+import { useEffect, useState } from "react";
 
 const colorsBars = [   //Array de colores de donde agarrara la grafica para pintar las barras
     "#003f5c",
@@ -59,37 +24,82 @@ const colorsBars = [   //Array de colores de donde agarrara la grafica para pint
 
 
 
-export default function BarChartD() {
+export default function BarChartD({darkMode} : {darkMode : boolean}) {
+
+ const [productosBajoStock, setProductosBajoStock] = useState<any[]>([]);
+
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const response = await fetch(
+                    "http://localhost:3001/api/productosbajostock"          
+                );
+                if (!response.ok) {
+                    throw new Error("Error en tu solicitud de datos");
+                }
+                const data = await response.json();
+                setProductosBajoStock(data);
+            } catch (error) {
+                console.error("Error al obtener los datos");
+            }
+        }
+        fetchData();
+    }, []);
+
+
+    const dataExample = [
+        { nombre: "teclado_mecanico", cantidad: 10 },
+        { nombre: "raton_inalambrico", cantidad: 15 },
+        { nombre: "monitor_24_pulgadas", cantidad: 7 },
+        { nombre: "portatil_gaming", cantidad: 5 },
+        { nombre: "disco_duro_ssd_1tb", cantidad: 20 },
+        { nombre: "memoria_ram_16gb", cantidad: 12 },
+        { nombre: "placa_base_atx", cantidad: 8 },
+        { nombre: "tarjeta_grafica_rtx3060", cantidad: 4 },
+        { nombre: "fuente_poder_650w", cantidad: 9 },
+        { nombre: "ventilador_rgb", cantidad: 25 },
+        { nombre: "caja_micro_atx", cantidad: 6 },
+        { nombre: "webcam_hd", cantidad: 14 },
+        { nombre: "auriculares_gaming", cantidad: 11 },
+        { nombre: "cable_hdmi", cantidad: 30 },
+        { nombre: "silla_ergonomica", cantidad: 3 }
+    ].sort((a,b) => a.cantidad - b.cantidad); 
+    
     return (
-        <article className="flex flex-col items-center ml-0 border border-gray-600 w-full h-fit p-2  rounded-2xl cursor-pointer ">
+        <article className={`flex flex-col items-center ml-0 border ${darkMode ? "border-white text-white duration-700" : "border-gray-700 text-black duration-700"} w-full h-full p-2  rounded-2xl cursor-pointer `}   >
             <h1 className="font-semibold">Productos de bajo stock</h1>
-            <BarChart
-                width={1000}
-                height={500}
-                data={bajoStockData}
-                margin={{
-                    top: 20,
-                    right: 30,
-                    left: 20,
-                    bottom: 5,
-                }}
-                barSize={50}
-            >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="producto" angle={0} />{" "}
-                {/* Rota los nombres de los productos */}
-                <YAxis />
-                <Tooltip />
-                {/* <Bar dataKey="Cantidad  " stackId="a" fill={colorsBars[Math.floor(Math.random ()*colorsBars.length) ]} /> */}
-                <Bar dataKey="Cantidad" stackId="a">
-                    {bajoStockData.map((entry, index) => (
-                        <Cell
-                            key={`cell-${index}`}
-                            fill={colorsBars[index % colorsBars.length]}
-                        />
-                    ))}
-                </Bar>
-            </BarChart>
+            <div className="w-full h-[250px]">
+                <ResponsiveContainer >
+                    <BarChart
+                        data={dataExample}
+                        margin={{
+                            top: 20,
+                            right: 30,
+                            left: 20,
+                            bottom: 5,
+                        }}
+                        barSize={50}
+                    >
+                        <CartesianGrid strokeDasharray="3 3"  stroke={darkMode ? 'white' : "black"} style={{transition : 'stroke 0.7s ease-in-out'}}/>
+                        <XAxis  dataKey="nombre" angle={0} tick = {{fill : darkMode ? "white" : "black"}} style={{
+                            transition : 'fill 0.7s ease-in-out'
+                        }}/>
+                        {/* Rota los nombres de los productos */}
+                        <YAxis />
+                        <Tooltip />
+                        {/* <Bar dataKey="Cantidad  " stackId="a" fill={colorsBars[Math.floor(Math.random ()*colorsBars.length) ]} /> */}
+                        <Bar dataKey="cantidad" stackId="a">
+                            {dataExample.map((entry, index) => (
+                                <Cell
+                                    key={`cell-${index}`}
+                                    fill={colorsBars[index % colorsBars.length]}
+                                />
+                            ))}
+                        </Bar>
+                    </BarChart>
+                </ResponsiveContainer>
+            </div>
         </article>
     );
 }
+    
