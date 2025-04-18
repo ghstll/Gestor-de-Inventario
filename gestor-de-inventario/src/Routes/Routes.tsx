@@ -1,20 +1,28 @@
-import { useState } from "react";
 import { createBrowserRouter } from "react-router-dom";
 
-import App from "../App";
 import InicioPage from "../components/ui/pages/InicioPage/InicioPage";
-
-
- const [darkMode, setDarkMode] = useState<boolean>(false);
-    const toggleDarkMode = () => [setDarkMode(!darkMode)];
+import GeneracionAutomaticaMainPage from "../components/ui/pages/PreferenciasPages/GeneracionAutomaticaPage/GeneracionAutomatica_Main/GeneracionAutomaticaMainPage";
+import GeneracionAutomaticaReportesPage from "../components/ui/pages/PreferenciasPages/GeneracionAutomaticaPage/GeneracionAutomatica_Reportes/GeneracionAutomaticaReportesPage";
 
 
 export const router = createBrowserRouter([
     {
         path : "/",
-        element: <App></App>,
-        children : [
-            {path : "" , element : <InicioPage darkMode = {darkMode}></InicioPage>}
-        ]
+        element: <InicioPage></InicioPage>,
+    },
+    {
+        path : "/dashboard",
+        element: <InicioPage></InicioPage>,
+    },
+    {
+        path : "/generacionautomatica",
+        element  : <GeneracionAutomaticaMainPage></GeneracionAutomaticaMainPage>,
+        
+    },
+    {
+        path : "/generacionautomatica/reportes",
+        element : <GeneracionAutomaticaReportesPage></GeneracionAutomaticaReportesPage>
     }
+    
 ])
+

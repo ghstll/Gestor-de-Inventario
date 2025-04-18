@@ -3,7 +3,7 @@ import UserLogo from "../../../../assets/user.svg";
 import '../../../../index.css';
 
 import { useEffect, useState } from "react";
-export default function ActividadReciente({ darkMode }: { darkMode: boolean }) {
+export default function ActividadReciente() {
     const [actividad, setActividad] = useState<any[]>([]);
 
     useEffect(() => {
@@ -49,10 +49,10 @@ export default function ActividadReciente({ darkMode }: { darkMode: boolean }) {
 
     return (
         <article
-            className={`border rounded-lg  w-full h-full p-5 flex flex-col gap-3 overflow-auto ${ darkMode? "border-white duration-700 text-white": "border-black duration-700 text-black"}`}>
+            className="border rounded-lg  w-full h-full p-5 flex flex-col gap-3 overflow-auto border-black duration-700 text-black">
             <div>
                 <h1
-                    className={`font-semibold text-xl  ${darkMode? "border-white duration-700 text-white": "border-black duration-700 text-black"}`}>
+                    className="font-semibold text-xl border-black duration-700 text-black">
                     Movimientos Reciente
                 </h1>
                 <h2>Ultima actividad en el sistema : {dataExample.length} Movimientos</h2>
@@ -60,7 +60,7 @@ export default function ActividadReciente({ darkMode }: { darkMode: boolean }) {
             <div className="flex flex-col gap-4 overflow-auto" id="recent-activity">
                 {dataExample.map((obj) => {
                     return (
-                        <div className={`border cursor-pointer ${darkMode ? "border-white duration-700 " : "border-black duration-700"} rounded-2xl flex justify-between p-3 ${obj.usuario == "Manual"? "bg-[#bc9999]": "bg-[#4d4758]"}`}>
+                        <div className={`border cursor-pointer  border-black duration-700 rounded-2xl flex justify-between p-3 ${obj.usuario == "Manual"? "bg-[#bc9999]": "bg-[#4d4758]"}`}>
                             <div className="flex flex-col justify-center ">
                                 <div className="flex items-center">
                                     <img

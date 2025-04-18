@@ -2,9 +2,9 @@
 const ultimoMovimiento  = 1423.20
 
 
-export default function Ventas({darkMode} : {darkMode : boolean}){
+export default function Ventas(){
     return(
-        <article className={`border ${darkMode ? "border-white text-white duration-700" : "border-gray-700 text-black duration-700"} w-full h-full p-3 rounded-lg`}>
+        <article className="border border-gray-700 text-black duration-700w-full h-full p-3 rounded-lg">
             <h1 className="font-semibold text-base">Ventas de hoy </h1>
             <h1 className="font-bold text-xl">$ 74,288.20</h1>
             <div className="flex gap-5 justify-center items-center">

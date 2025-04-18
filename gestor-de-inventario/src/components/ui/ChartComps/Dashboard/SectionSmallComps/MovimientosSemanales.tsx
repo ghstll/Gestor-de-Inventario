@@ -1,11 +1,11 @@
 import {
-  CartesianGrid,
-  Line,
-  LineChart,
-  ResponsiveContainer,
-  Tooltip,
-  XAxis,
-  YAxis
+    CartesianGrid,
+    Line,
+    LineChart,
+    ResponsiveContainer,
+    Tooltip,
+    XAxis,
+    YAxis
 } from "recharts";
 
 import { useState } from "react";
@@ -30,12 +30,12 @@ const data = [
   { fecha: "Domingo 14/04", Cantidad: 2700 },
 ];
 
-export default function MovimientosSemanales({darkMode} : {darkMode : boolean}) {
+export default function MovimientosSemanales() {
 
     const [movimientosSemanales,setMovimientosSemanales] = useState<any[]>([])
 
     return (  
-        <article className={`w-full h-full flex flex-col items-center p-3 border rounded-lg ${darkMode ? "border-white text-white duration-700" : "border-black text-black duration-700"}`}>
+        <article className="w-full h-full flex flex-col items-center p-3 border rounded-lg border-black text-black duration-700">
           <div className="w-full h-fit flex justify-center">
             <h1 className="font-semibold">Ventas de la Semana</h1>
           </div>  
@@ -51,16 +51,14 @@ export default function MovimientosSemanales({darkMode} : {darkMode : boolean}) 
                         bottom: 5,
                     }}
                 >
-                    <CartesianGrid strokeDasharray="3 3" stroke={darkMode ? 'white' : "black"} style={{transition : 'stroke 0.7s ease-in-out'}} />
-                    <XAxis dataKey="fecha" fontSize={"18px"}stroke={darkMode ? "white" : "black"} tick = {{fill : darkMode ? "white" : "black"}} style={{
-                            transition : 'fill 0.7s ease-in-out'
-                        }}/>
+                    <CartesianGrid strokeDasharray="3 3" stroke="black"  />
+                    <XAxis dataKey="fecha" fontSize={"18px"}stroke="black" tick = {{fill : "black"}} />
                     <YAxis />
                     <Tooltip />
                     <Line
                         type="monotone"
                         dataKey="Cantidad"
-                        stroke={darkMode ? "white" : "black"}
+                        stroke={"black"}
                         activeDot={{ r: 8 }}
                     />
                 </LineChart>

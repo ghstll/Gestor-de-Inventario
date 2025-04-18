@@ -24,7 +24,7 @@ const colorsBars = [   //Array de colores de donde agarrara la grafica para pint
 
 
 
-export default function BarChartD({darkMode} : {darkMode : boolean}) {
+export default function BarChartD() {
 
  const [productosBajoStock, setProductosBajoStock] = useState<any[]>([]);
 
@@ -66,7 +66,7 @@ export default function BarChartD({darkMode} : {darkMode : boolean}) {
     ].sort((a,b) => a.cantidad - b.cantidad); 
     
     return (
-        <article className={`flex flex-col items-center ml-0 border ${darkMode ? "border-white text-white duration-700" : "border-gray-700 text-black duration-700"} w-full h-full p-2  rounded-2xl cursor-pointer `}   >
+        <article className="flex flex-col items-center ml-0 borderborder-gray-700 text-black duration-700 w-full h-full p-2  rounded-2xl cursor-pointer">
             <h1 className="font-semibold">Productos de bajo stock</h1>
             <div className="w-full h-[250px]">
                 <ResponsiveContainer >
@@ -80,10 +80,8 @@ export default function BarChartD({darkMode} : {darkMode : boolean}) {
                         }}
                         barSize={50}
                     >
-                        <CartesianGrid strokeDasharray="3 3"  stroke={darkMode ? 'white' : "black"} style={{transition : 'stroke 0.7s ease-in-out'}}/>
-                        <XAxis  dataKey="nombre" angle={0} tick = {{fill : darkMode ? "white" : "black"}} style={{
-                            transition : 'fill 0.7s ease-in-out'
-                        }}/>
+                        <CartesianGrid strokeDasharray="3 3"  stroke="black" style={{transition : 'stroke 0.7s ease-in-out'}}/>
+                        <XAxis  dataKey="nombre" angle={0} tick = {{fill : "black"}}/>
                         {/* Rota los nombres de los productos */}
                         <YAxis />
                         <Tooltip />
