@@ -14,7 +14,7 @@ export default function GeneracionAutomaticaReportesPage(){
 
 
     return(
-        <div>
+        <>
             <AsideMenu></AsideMenu>
             <div className="border border-black w-[70%] overflow-auto rounded-lg p-5">
                 <section className="flex items-center justify-between">
@@ -82,6 +82,6 @@ export default function GeneracionAutomaticaReportesPage(){
                     }
                 </section>
                 </div>
-        </div>
+        </>
     )   
 }
