@@ -1,6 +1,7 @@
 [
   {
-    "tipoReporte": "Analíticos",
+    "id": 1,
+    "tipoReporte": "Analiticos",
     "periodicidad": 1,
     "formato": ["PDF", "Excel"],
     "destinatarios": ["analitica@empresa.com"],
@@ -13,7 +14,8 @@
     }
   },
   {
-    "tipoReporte": "Resúmenes",
+    "id": 2,
+    "tipoReporte": "Resumenes",
     "periodicidad": 7,
     "formato": ["PDF", "Excel"],
     "destinatarios": ["gerencia@empresa.com", "finanzas@empresa.com"],
@@ -26,6 +28,7 @@
     }
   },
   {
+    "id": 3,
     "tipoReporte": "Ventas",
     "periodicidad": 30,
     "formato": ["PDF", "CSV"],
@@ -40,6 +43,7 @@
     }
   },
   {
+    "id": 4,
     "tipoReporte": "Existencias",
     "periodicidad": 7,
     "formato": ["Excel", "CSV"],
@@ -53,7 +57,8 @@
     }
   },
   {
-    "tipoReporte": "Movimiento s",
+    "id": 5,
+    "tipoReporte": "Movimientos",
     "periodicidad": 1,
     "formato": ["CSV"],
     "destinatarios": ["operaciones@empresa.com"],
@@ -66,7 +71,8 @@
     }
   },
   {
-    "tipoReporte": "Artículos",
+    "id": 6,
+    "tipoReporte": "Articulos",
     "periodicidad": 30,
     "formato": ["PDF", "Excel"],
     "destinatarios": ["catalogo@empresa.com"],
@@ -79,7 +85,8 @@
     }
   },
   {
-    "tipoReporte": "Artículos a granel",
+    "id": 7,
+    "tipoReporte": "Articulos a granel",
     "periodicidad": 15,
     "formato": ["PDF"],
     "destinatarios": ["controlgranel@empresa.com"],
@@ -92,6 +99,7 @@
     }
   },
   {
+    "id": 8,
     "tipoReporte": "Proveedores",
     "periodicidad": 30,
     "formato": ["PDF", "Excel"],
@@ -105,6 +113,7 @@
     }
   },
   {
+    "id": 9,
     "tipoReporte": "Cambios de precio",
     "periodicidad": 7,
     "formato": ["PDF", "Excel", "CSV"],

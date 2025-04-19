@@ -66,7 +66,7 @@ export default function BarChartD() {
     ].sort((a,b) => a.cantidad - b.cantidad); 
     
     return (
-        <article className="flex flex-col items-center ml-0 borderborder-gray-700 text-black duration-700 w-full h-full p-2  rounded-2xl cursor-pointer">
+        <article className="flex flex-col items-center ml-0 border border-gray-700 text-black duration-700 w-full h-full p-2  rounded-2xl cursor-pointer">
             <h1 className="font-semibold">Productos de bajo stock</h1>
             <div className="w-full h-[250px]">
                 <ResponsiveContainer >
