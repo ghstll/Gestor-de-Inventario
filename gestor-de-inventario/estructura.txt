@@ -1,0 +1,161 @@
+Listado de rutas de carpetas para el volumen Windows
+El número de serie del volumen es 4099-A5E3
+C:.
+|   .gitignore
+|   eslint.config.js
+|   estructura.txt
+|   index.html
+|   package-lock.json
+|   package.json
+|   potcss.config.js
+|   README.md
+|   tailwind.config.js
+|   tsconfig.app.json
+|   tsconfig.json
+|   tsconfig.node.json
+|   vite.config.ts
+|   
+          
++---public
+|       logo_imss.png
+|       vite.svg
+|       
+\---src
+    |   html2pdf.d.ts
+    |   main.tsx
+    |   vite-env.d.ts
+    |   
+    +---api
+    |   |   api.mjs
+    |   |   
+    |   +---db
+    |   |       connection.mjs
+    |   |       
+    |   \---routes
+    |           actividadReciente.mjs
+    |           prodcuctosBajoStock.mjs
+    |           
+    +---app
+    |       index.css
+    |       Routes.tsx
+    |       
+    +---data
+    |   \---json_files
+    |           conf_auto_reportes.json
+    |           cont_auto_ordenes_compra.json
+    |           notifications_data.json
+    |           
+    +---features
+    |   +---dashboard
+    |   |   +---components
+    |   |   |       ActividadReciente.tsx
+    |   |   |       BarChartD.tsx
+    |   |   |       MovimientosSemanales.tsx
+    |   |   |       ProductosAgotados.tsx
+    |   |   |       Ventas.tsx
+    |   |   |       
+    |   |   \---pages
+    |   |           InicioPage.tsx
+    |   |           
+    |   +---generacionAutomatica
+    |   |   +---components
+    |   |   |       GeneracionAutomaticaBtn.tsx
+    |   |   |       GeneracionAutomaticaReportesCard.tsx
+    |   |   |       GeneracionAutomaticaReportesModal.tsx
+    |   |   |       
+    |   |   \---pages
+    |   |           GeneracionAutomaticaMainPage.tsx
+    |   |           GeneracionAutomaticaOrdenesPage.tsx
+    |   |           GeneracionAutomaticaReportesPage.tsx
+    |   |           
+    |   +---notificaciones
+    |   |   +---components
+    |   |   |       NotificacionesCard.tsx
+    |   |   |       
+    |   |   \---pages
+    |   |           NotificacionesPage.tsx
+    |   |           
+    |   +---ordenesCompra
+    |   |   +---components
+    |   |   \---pages
+    |   |           OrdenesDeCompraPage.tsx
+    |   |           
+    |   \---reportes
+    |       +---components
+    |       \---pages
+    |               ReportesAnaliticosPage.tsx
+    |               
+    +---reports
+    |       InventarioFisicoReport.tsx
+    |       ReportPreview.tsx
+    |       
+    +---Routes
+    \---shared
+        +---assets
+        |   +---icons
+        |   |   +---asideMenu
+        |   |   |       AjustarIcon.svg
+        |   |   |       AnaliticosIcon.svg
+        |   |   |       ArticulosAGranelIcon.svg
+        |   |   |       ArticulosIcon.svg
+        |   |   |       bell.svg
+        |   |   |       CambiarContraseñaIcon.svg
+        |   |   |       CambiosDePrecioIcon.svg
+        |   |   |       CapturarInventarioFisicoIcon.svg
+        |   |   |       ConsultarIcon.svg
+        |   |   |       ConsultarKardexIcon.svg
+        |   |   |       DevolucionesIcon.svg
+        |   |   |       erasebg-transformed.png
+        |   |   |       ExistenciasIcon.svg
+        |   |   |       FisicoKardexIcon.svg
+        |   |   |       HistoricoIcon.svg
+        |   |   |       home.svg
+        |   |   |       InventarioTeoricoIcon.svg
+        |   |   |       MermasIcon.svg
+        |   |   |       moon.svg
+        |   |   |       MovimientosIcon.svg
+        |   |   |       OrdenesDeCompraIcon.svg
+        |   |   |       PolizaContableIcon.svg
+        |   |   |       ProveedoresIcon.svg
+        |   |   |       react.svg
+        |   |   |       RecepcionesIcon.svg
+        |   |   |       RegistrarIcon.svg
+        |   |   |       ResumenIcon.svg
+        |   |   |       robot.svg
+        |   |   |       robot2.svg
+        |   |   |       SiniestrosIcon.svg
+        |   |   |       TransferenciasIcon.svg
+        |   |   |       user.svg
+        |   |   |       VentasIcon.svg
+        |   |   |       
+        |   |   +---format
+        |   |   |       csv_icon.png
+        |   |   |       excel_icon.png
+        |   |   |       pdf_icon.png
+        |   |   |       
+        |   |   +---GeneracionAutomatica
+        |   |   |       OrdenesDeCompraIcon.svg
+        |   |   |       ReportIcon.svg
+        |   |   |       
+        |   |   \---notifications_icons
+        |   |           default.svg
+        |   |           reporte_generado.svg
+        |   |           stock_bajo.svg
+        |   |           sugerencia.svg
+        |   |           vencimiento.svg
+        |   |           
+        |   \---images
+        \---components
+            +---AsideMenu
+            |       AsideMenu.tsx
+            |       AsideMenuButton.tsx
+            |       AsideMenuSection.tsx
+            |       
+            \---UI
+                    FormParamsReportContainer.tsx
+                    FormParamsReportDateRange.tsx
+                    FormParamsReportDepartamento.tsx
+                    FormParamsReportEstado.tsx
+                    FormParamsReportFolioRange.tsx
+                    FormParamsReportProveedor.tsx
+                    
