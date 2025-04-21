@@ -67,3 +67,39 @@ html,body,#root{
 
 
 
+#scrollbarstyle::-webkit-scrollbar {
+  width: 3px;
+}
+
+
+
+
+#scrollbarstyle::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#scrollbarstyle::-webkit-scrollbar-thumb {
+  background: #3f3f3f ;
+  border-radius: 20px;
+}
+
+
+
+
+#productosBajoStock::-webkit-scrollbar {
+  width: 3px;
+}
+
+
+
+
+#productosBajoStock::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#productosBajoStock::-webkit-scrollbar-thumb {
+  background: #3f3f3f ;
+  border-radius: 20px;
+}
+
+

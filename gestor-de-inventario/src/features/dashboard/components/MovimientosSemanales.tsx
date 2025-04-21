@@ -36,7 +36,7 @@ export default function MovimientosSemanales() {
 
     return (  
         <article className="w-full h-full flex flex-col items-center p-3 border rounded-lg border-black text-black duration-700">
-          <div className="w-full h-fit flex justify-center">
+          <div className="w-full h-full flex justify-center">
             <h1 className="font-semibold">Ventas de la Semana</h1>
           </div>  
             <ResponsiveContainer width="100%" height="100%">

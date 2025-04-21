@@ -5,7 +5,6 @@ import BarChartD from "../components/BarChartD";
 import MovimientosSemanales from "../components/MovimientosSemanales";
 import Ventas from "../components/Ventas";
 
-
 const frasesBienvenida = [
     "¡Bienvenido de nuevo! Tu inventario te está esperando.",
     "Todo listo para comenzar tu jornada. ¡Gestionemos juntos!",
@@ -44,7 +43,7 @@ export default function InicioPage() {
                                     <BarChartD></BarChartD>
                                 </div>
                             </div>
-                            <div className=" w-[30%] h-full">
+                            <div className="max-w-[50%] h-full">
                                 <ActividadReciente></ActividadReciente>
                             </div>
                         </section>
