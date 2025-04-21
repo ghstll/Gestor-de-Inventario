@@ -4,10 +4,13 @@
   "version": "0.0.0",
   "type": "commonjs",
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently \"npm run dev:vite\" \"npm run dev:api\"",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "dev:vite" : "vite",
+    "dev:api" : "node src/api/api.mjs"
+
   },
   "dependencies": {
     "@tailwindcss/postcss7-compat": "^2.2.17",
