@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "nombre_reporte": "Reporte de desempeño mensual",
+        "parametros": {
+            "mes": "marzo",
+            "año": 2025
+        },
+        "generado_por": "admin",
+        "fecha_generacion": "2025-04-22T03:18:34.627Z",
+        "formato": "PDF",
+        "exito": true,
+        "mensaje_error": null,
+        "tipo_de_reporte": "Analiticos",
+        "tipo_generacion": "manual"
+    },
+    {
+        "id": 2,
+        "nombre_reporte": "Reporte comparativo anual",
+        "parametros": {
+            "mes" : "marzo",
+            "año": 2025
+        },
+        "generado_por": "admin",
+        "fecha_generacion": "2025-04-22T03:18:34.627Z",
+        "formato": "Excel",
+        "exito": true,
+        "mensaje_error": null,
+        "tipo_de_reporte": "Analiticos",
+        "tipo_generacion": "automatica"
+    }
+]

@@ -40,12 +40,12 @@ export default function AsideMenu(){
 
     return( 
         <aside className="h-screen w-[240px] min-w-[240px] flex flex-col gap-10 overflow-auto pt-5 pb-6 asidemenu bg-[#154f3a] border-r border-transparent duration-700"> 
-            {/* Contenedor aside que contendra  */}
-            <AsideMenuSection title="SISTEMA">
+            {/* Contenedor aside que contendra*/}
+            <AsideMenuSection title="SISTEMA"> 
                 <AsideMenuButton  onClickFunc={() => nav("/")} text="Inicio" icon = {InicioIcon}></AsideMenuButton>
                 <AsideMenuButton  onClickFunc={() => nav("/notificaciones")} text="Notificaciones" icon = {NotificacionIcon} notificationNumber={dataNotifications.nuevas}></AsideMenuButton>
 
-            </AsideMenuSection>
+            </AsideMenuSection> 
             
 
             <AsideMenuSection title="OPERACIONES">      
@@ -83,7 +83,7 @@ export default function AsideMenu(){
             
             
             <AsideMenuSection title="REPORTES">
-                <AsideMenuButton text="Analiticos" icon = {AnaliticosIcon}></AsideMenuButton>
+                <AsideMenuButton onClickFunc={() => nav("/reportes/analiticos")} text="Analiticos" icon = {AnaliticosIcon}></AsideMenuButton>
                 <AsideMenuButton text="Resumenes" icon = {ResumenIcon}></AsideMenuButton>
                 <AsideMenuButton text="Ventas" icon = {VentasIcon}></AsideMenuButton>           
                 <AsideMenuButton text="Existencias" icon = {ExistenciasIcon}></AsideMenuButton>

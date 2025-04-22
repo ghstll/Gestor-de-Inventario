@@ -1,0 +1,52 @@
+[
+    {
+        "fecha": "2025-04-22T06:00:00.000Z",
+        "eventos": [
+            {
+                "fecha": "2025-04-22",
+                "titulo": "Orden creada",
+                "descripcion": "Se ha generado una nueva orden de compra para Nestlé.",
+                "proveedor": 1,
+                "nota": "Pendiente de confirmación por parte del proveedor.",
+                "tipo": "Orden creada",
+                "creado_en": "2025-04-21T21:13:28.602913"
+            },
+            {
+                "fecha": "2025-04-22",
+                "titulo": "Orden confirmada",
+                "descripcion": "Nestlé ha confirmado la recepción y procesamiento de la orden.",
+                "proveedor": 1,
+                "nota": "La orden está en proceso de preparación.",
+                "tipo": "Orden confirmada",
+                "creado_en": "2025-04-21T21:13:28.602913"
+            },
+            {
+                "fecha": "2025-04-22",
+                "titulo": "Orden enviada",
+                "descripcion": "Nestlé ha enviado los productos solicitados en la orden de compra.",
+                "proveedor": 1,
+                "nota": "Esperando la llegada de los productos.",
+                "tipo": "Orden enviada",
+                "creado_en": "2025-04-21T21:13:28.602913"
+            },
+            {
+                "fecha": "2025-04-22",
+                "titulo": "Orden recibida",
+                "descripcion": "Se han recibido los productos enviados por Nestlé.",
+                "proveedor": 1,
+                "nota": "Verificación de cantidad y calidad pendiente.",
+                "tipo": "Orden recibida",
+                "creado_en": "2025-04-21T21:13:28.602913"
+            },
+            {
+                "fecha": "2025-04-22",
+                "titulo": "Cancelación de orden",
+                "descripcion": "La orden de compra ha sido cancelada debido a problemas de stock con Nestlé.",
+                "proveedor": 1,
+                "nota": "Pendiente la resolución del problema de disponibilidad.",
+                "tipo": "Cancelación de orden",
+                "creado_en": "2025-04-21T21:13:28.602913"
+            }
+        ]
+    }
+]

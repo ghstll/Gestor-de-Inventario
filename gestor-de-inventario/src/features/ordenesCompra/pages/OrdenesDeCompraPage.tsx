@@ -1,4 +1,5 @@
 import { useState } from "react";
+import eventosOrdenesCompraData from '../../../data/json_files/test/eventosOrdenesCompra.json';
 import AsideMenu from "../../../shared/components/AsideMenu/AsideMenu";
 import FormParamsReportContainer from "../../../shared/components/UI/FormParamsReportContainer";
 import FormParamsReportDateRange from "../../../shared/components/UI/FormParamsReportDateRange";
@@ -10,20 +11,21 @@ import CalendarComp from "../../dashboard/components/CalendarComp";
 import OrdenesCompraMesGrafica from "../components/OrdenesCompraMesGrafica";
 import OrdenesCompraProductosBajoStock from "../components/OrdenesCompraProductosBajoStock";
 import OrdenesCompraRecientes from "../components/OrdenesCompraRecientes";
+
 function OrdenesDeCompraPage() {
     const [eventosData,setEventosData]  = useState([])
 
-    async function getEventosOrdenesDeCompraData(){
-      try {
-        const response = await fetch('http://localhost:3001/api/eventos/ordenescompra')
-        const  data = await response.json()
-        setEventosData(data)
-      } catch (error) {
-        console.log("Error al obtener los eventos: ",error)
-      }
-    }getEventosOrdenesDeCompraData()
+    // async function getEventosOrdenesDeCompraData(){
+    //   try {
+    //     const response = await fetch('http://localhost:3001/api/eventos/ordenescompra')
+    //     const  data = await response.json()
+    //     setEventosData(data)
+    //   } catch (error) {
+    //     console.log("Error al obtener los eventos: ",error)
+    //   }
+    // }getEventosOrdenesDeCompraData()
     
-
+    
     return (
         <div className="flex box-border h-screen">
             <AsideMenu></AsideMenu>
@@ -53,7 +55,7 @@ function OrdenesDeCompraPage() {
                         </div>
                     </div>
                     <div className="w-[40%] h-full">
-                        {<CalendarComp dia={eventosData}></CalendarComp>}
+                        {<CalendarComp dia={eventosOrdenesCompraData}></CalendarComp>}
                     </div>
                 </section>
             </main>

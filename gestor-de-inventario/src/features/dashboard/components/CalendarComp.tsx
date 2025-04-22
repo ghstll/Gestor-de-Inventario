@@ -3,10 +3,15 @@ import Calendar from 'react-calendar';
 import OrdenesCompraEventos from '../../ordenesCompra/components/OrdenesCompraEventos';
 import './CalendarComp.css';
 
+
+
+// RECORDARTIO : Cambiar el tipo de proveedor de number a String cuando se este usando la API y no archivos locales JSON
+
+
 interface Evento {
     titulo : string;
     descripcion : string;
-    proveedor : string;
+    proveedor : number;
     nota : string;
     tipo : string
 }
