@@ -6,6 +6,7 @@ import GeneracionAutomaticaReportesPage from "../features/generacionAutomatica/p
 import NotificaionesPage from "../features/notificaciones/pages/NotificacionesPage";
 import OrdenesDeCompraPage from "../features/ordenesCompra/pages/OrdenesDeCompraPage";
 import ReportesAnaliticosPage from "../features/reportes/pages/ReportesAnaliticosPage";
+import ReporteAnalitico from "../reports/reportes/ReporteAnalitico";
 export const router = createBrowserRouter([
     {
         path : "/",
@@ -31,8 +32,11 @@ export const router = createBrowserRouter([
     {
         path : "/reportes/analiticos",
         element : <ReportesAnaliticosPage></ReportesAnaliticosPage>
-    }       
-    
+    },       
+    {
+        path : "/testreporte",
+        element : <ReporteAnalitico></ReporteAnalitico>
+    }
     
 ])
 

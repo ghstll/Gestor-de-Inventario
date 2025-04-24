@@ -1,5 +1,5 @@
-import "../../../app/index.css";
 import AsideMenu from "../../../shared/components/AsideMenu/AsideMenu";
+import "../../../shared/scrollbarcss.css";
 import ActividadReciente from "../components/ActividadReciente";
 import BarChartD from "../components/BarChartD";
 import MovimientosSemanales from "../components/MovimientosSemanales";
@@ -34,7 +34,7 @@ export default function InicioPage() {
                     <div className="h-full w-full flex p-5 flex-col gap-5 overflow-auto">
                         <section className="flex gap-4 max-h-[450px]">
                             <div className="flex flex-col gap-2 w-[70%]">
-                                <div  className="flex gap-1 overflow-auto w-full h-[150px]" id="section-comps ">
+                                <div  className="flex gap-1 overflow-auto w-full h-[150px] scrollbarclass" >
                                     <Ventas ></Ventas>
                                     <Ventas ></Ventas>
                                     <Ventas ></Ventas>

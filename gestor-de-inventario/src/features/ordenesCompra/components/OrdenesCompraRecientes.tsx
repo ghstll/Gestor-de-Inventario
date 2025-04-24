@@ -1,4 +1,4 @@
-import "../../../app/index.css";
+import "../../../shared/scrollbarcss.css";
 import OrdenesCompraRecientesCard from "./OrdenesCompraRecientesCard";
 export default function OrdenesCompraRecientes() {
     const ordenesDeCompra = [
@@ -18,7 +18,7 @@ export default function OrdenesCompraRecientes() {
       
 
     return (
-        <section className="flex flex-col w-full h-full border border-black items-center gap-2 rounded-md  overflow-y-auto" id="scrollbarstyle">
+        <section className="flex flex-col w-full h-full border border-black items-center gap-2 rounded-md  overflow-y-auto scrollbarclass" >
             <h1 className="font-bold">Ordenes de compra recientes</h1>
             <div className="w-full flex flex-col gap-2 p-2">{
                     ordenesDeCompra.length == 0 ? <h1 className="font-semibold text-center">Aqui se mostraran las ordenes de compra recientes</h1> : 

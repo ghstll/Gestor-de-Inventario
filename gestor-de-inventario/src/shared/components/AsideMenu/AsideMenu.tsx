@@ -34,12 +34,16 @@ import dataNotifications from "../../../data/json_files/notifications_data.json"
 
 import AsideMenuButton from "./AsideMenuButton";
 import AsideMenuSection from "./AsideMenuSection"; //Importamos el componente AsideMenuSection
+
+import '../../../shared/scrollbarcss.css';
+
+
 export default function AsideMenu(){ 
 
     const nav = useNavigate()
 
     return( 
-        <aside className="h-screen w-[240px] min-w-[240px] flex flex-col gap-10 overflow-auto pt-5 pb-6 asidemenu bg-[#154f3a] border-r border-transparent duration-700"> 
+        <aside className="h-screen w-[240px] min-w-[240px] flex flex-col gap-10 overflow-auto scrollbarclass  p-2  bg-[#154f3a] border-r border-transparent duration-700"> 
             {/* Contenedor aside que contendra*/}
             <AsideMenuSection title="SISTEMA"> 
                 <AsideMenuButton  onClickFunc={() => nav("/")} text="Inicio" icon = {InicioIcon}></AsideMenuButton>

@@ -1,6 +1,6 @@
-import "../../../app/index.css";
 import BotLogo from "../../../shared/assets/icons/asideMenu/robot.svg";
 import UserLogo from "../../../shared/assets/icons/asideMenu/user.svg";
+import '../../../shared/scrollbarcss.css';
 
 import { useEffect, useState } from "react";
 export default function ActividadReciente() {
@@ -57,7 +57,7 @@ export default function ActividadReciente() {
                 </h1>
                 <h2>Ultima actividad en el sistema : {dataExample.length} Movimientos</h2>
             </div>
-            <div className="flex flex-col gap-4 overflow-auto" id="recent-activity">
+            <div className="flex flex-col gap-4 overflow-auto scrollbarclass" >
                 {dataExample.map((obj) => {
                     return (
                         <div className={`border cursor-pointer  border-black duration-700 rounded-2xl flex justify-between p-3 ${obj.usuario == "Manual"? "bg-[#bc9999]": "bg-[#4d4758]"}`}>
