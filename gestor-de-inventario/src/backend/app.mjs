@@ -1,6 +1,7 @@
 import cors from 'cors'
 import express from 'express'
 import logsRoute from './routes/actividadReciente.mjs'
+import confAutoReportes from './routes/confAutoReportes.mjs'
 import eventosOrdenesCompra from './routes/eventosOrdenesCompra.mjs'
 import productosBajoStockRoute from './routes/prodcuctosBajoStock.mjs'
 import ultimosReportes from './routes/ultimosReportes.mjs'
@@ -22,10 +23,10 @@ app.use('/api',eventosOrdenesCompra)
 
 app.use('/api',ultimosReportes)
 
+app.use('/api',confAutoReportes)
+
+
 
 app.listen(PORT, () =>{
-    console.log("API listening on port : ", PORT)
-
-    
+    console.log("Server listening on port : ", PORT)
 })
-

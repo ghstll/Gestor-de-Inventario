@@ -49,7 +49,7 @@ export default function ActividadReciente() {
 
     return (
         <article
-            className="border rounded-lg  w-full h-full p-5 flex flex-col gap-3 overflow-auto border-black duration-700 text-black">
+            className="border rounded-lg w-full h-full p-5 flex flex-col gap-3 overflow-auto border-black duration-700 text-black">
             <div>
                 <h1
                     className="font-semibold text-xl border-black duration-700 text-black">

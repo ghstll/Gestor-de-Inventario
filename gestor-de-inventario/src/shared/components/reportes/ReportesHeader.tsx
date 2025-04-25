@@ -28,9 +28,6 @@ export default function ReportesHeader({operacion,fechaFin,fechaInicio} : props)
         <div className='font-bold italic text-nowrap flex items-center text-[12px]'>
           <h4>{fechaDia} - {fechaMes} - {fechaAnio}</h4>
         </div>
-        {/* <div>
-          Notas de {title}
-        </div> */}
       </section>
       <div className='flex flex-col mt-3 items-center'>
         <h1 className='font-bold'>
