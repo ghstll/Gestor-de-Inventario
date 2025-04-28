@@ -25,7 +25,7 @@ const ordenesPorMes = [
 
 export default function OrdenesCompraMesGrafica(){
     return(
-         <div className="w-full h-full flex flex-col items-center gap-2 border border-black p-0 rounded-md">
+         <div className="w-full h-full flex flex-col items-center gap-2 border border-black bg-white p-0 rounded-md">
             <h1 className="font-bold">Ordenes de compra por mes (2025)</h1>
              <ResponsiveContainer width="100%" height="100%">
                             <LineChart

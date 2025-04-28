@@ -18,7 +18,7 @@ export default function OrdenesCompraProductosBajoStock(){
       
 
     return(
-        <section className="flex flex-col w-full h-full border border-black items-center gap-2 rounded-md  overflow-y-auto scrollbarclass" >
+        <section className="flex flex-col w-full h-full border border-black items-center gap-2 rounded-md  overflow-y-auto scrollbarclass bg-white" >
             <div className="flex flex-col items-center">
                 <h1 className="font-bold">Productos con bajo Stock</h1>
                 <h1 className="text-center font-thin italic">Te mostramos una lista de los productos que necesitan reabastecerse</h1>

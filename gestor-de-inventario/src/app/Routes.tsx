@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 
 import InicioPage from "../features/dashboard/pages/InicioPage";
 import GeneracionAutomaticaMainPage from "../features/generacionAutomatica/pages/GeneracionAutomaticaMainPage";
+import GeneracionAutomaticaOperaciones_TipoPage from "../features/generacionAutomatica/pages/GeneracionAutomaticaReportes/GeneracionAutomaticaOperaciones/GeneracionAutomaticaOperaciones_TipoPage";
 import GeneracionAutomaticaReportes_Container from "../features/generacionAutomatica/pages/GeneracionAutomaticaReportes/GeneracionAutomaticaReportes_Container";
 import GeneracionAutomaticaReportes_TipoPage from "../features/generacionAutomatica/pages/GeneracionAutomaticaReportes/GeneracionAutomaticaReportes_TipoPage";
 import NotificaionesPage from "../features/notificaciones/pages/NotificacionesPage";
@@ -32,6 +33,7 @@ export const router = createBrowserRouter([
     //     path : "/testreporte",
     //     element : <ReporteAnalitico></ReporteAnalitico>
     // }
+    
     {
         path: "/generacionautomatica/reportes",
         element: (
@@ -89,6 +91,10 @@ export const router = createBrowserRouter([
         path : "/generacionautomatica/reportes/cambios_de_precio",
         element  :<GeneracionAutomaticaReportes_Container tipoReporte={"Cambios de precio"}></GeneracionAutomaticaReportes_Container>
 
+    },
+    {
+        path : "/generacionautomatica/operaciones",
+        element : <GeneracionAutomaticaOperaciones_TipoPage></GeneracionAutomaticaOperaciones_TipoPage>
     }
     
 ]);

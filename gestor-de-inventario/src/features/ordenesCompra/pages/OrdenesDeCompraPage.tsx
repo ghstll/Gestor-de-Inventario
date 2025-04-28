@@ -29,7 +29,7 @@ function OrdenesDeCompraPage() {
     return (
         <div className="flex box-border h-screen">
             <AsideMenu></AsideMenu>
-            <main className="overflow-auto h-full w-full flex gap-4 flex-col  p-4 sbg-white text-black duration-700">
+            <main className="overflow-auto h-full w-full flex gap-4 flex-col  p-4 bg-gray-200 text-black duration-700">
                 <section className="flex w-full justify-end">
                     <button className="border border-black p-2 rounded-md font-semibold bg-green-800 text-white hover:bg-green-700 duration-700">
                         Nueva orden de compra

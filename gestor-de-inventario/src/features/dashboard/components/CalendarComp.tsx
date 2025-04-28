@@ -59,8 +59,8 @@ export default function CalendarComp({dia} : EventosProps) {
 
 
     return (
-    <div className='border border-black rounded-md flex flex-col p-2  h-full w-full gap-3'>
-        <Calendar className=""
+    <div className='border border-black rounded-md flex flex-col p-2  h-full w-full gap-3 bg-white'>
+        <Calendar className="border border-black"
             tileClassName = {({date,view}) =>{
                 if(view === "month"){
                     return fechasMarcadasDate.find(

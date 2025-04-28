@@ -23,7 +23,7 @@ export default function GeneracionAutomaticaMainPage(){
                 <hr />
                 <section className="w-full h-fit flex flex-col items-center mt-10 gap-5">
                     <GeneracionAutomaticaTipo onClickFunc={()=>nav("reportes")} icon={ReportesIcon} title="Reportes" description="Configurar la automatizacion para los reportes" color="#ffa9b9"></GeneracionAutomaticaTipo>
-                    <GeneracionAutomaticaTipo icon={ReportesIcon} title="Operaciones" description="Configurar la automatizacion para las operaciones" color="#fcd5bd"></GeneracionAutomaticaTipo>
+                    <GeneracionAutomaticaTipo onClickFunc={() => nav("operaciones")} icon={ReportesIcon} title="Operaciones" description="Configurar la automatizacion para las operaciones" color="#fcd5bd"></GeneracionAutomaticaTipo>
                     <GeneracionAutomaticaTipo icon={ReportesIcon} title="Ventas" description="Configurar la automatizacion para las ventas" color="#f2ffbf"></GeneracionAutomaticaTipo>
                     <GeneracionAutomaticaTipo icon={ReportesIcon} title="Kardex" description="Configurar la automatizacion para el kardex" color="#d9e99e"></GeneracionAutomaticaTipo>
                     <GeneracionAutomaticaTipo icon={ReportesIcon} title="Inventario fisico" description="Configurar la automatizacion para el inventario fisico" color="#c0d27e"></GeneracionAutomaticaTipo>

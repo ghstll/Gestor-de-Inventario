@@ -7,7 +7,7 @@ const router = Router()
 
 router.get('/confautoreportes/analiticos',async (req,res) =>{
     try{
-        const result = await pool.query('SELECT * FROM reportes_config_analiticos')
+        const result = await pool.query('SELECT * FROM reportes_config_analiticos ORDER BY creado_en DESC')
         res.json(result.rows)
     }catch(error){
         console.error('Error al obtener la configuracion de reportes analiticos automaticos', error)
