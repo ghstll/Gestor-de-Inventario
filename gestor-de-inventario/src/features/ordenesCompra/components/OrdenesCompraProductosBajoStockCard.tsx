@@ -7,7 +7,7 @@ interface props {
 
 export default function OrdenesCompraProductosBajoStockCard(props : props){
     return(
-        <article className="border border-black min-w-full flex items-center justify-between p-2 rounded-md">
+        <article className="border border-white min-w-full flex items-center justify-between p-2 rounded-md text-white">
             <div>
                 <h1>{props.nombre}</h1>
                 <h1 className="font-semibold">Proveedor : {props.proveedor}</h1>

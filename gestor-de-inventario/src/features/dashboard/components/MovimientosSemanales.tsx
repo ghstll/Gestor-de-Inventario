@@ -1,17 +1,6 @@
-import {
-    CartesianGrid,
-    Line,
-    LineChart,
-    ResponsiveContainer,
-    Tooltip,
-    XAxis,
-    YAxis
-} from "recharts";
-
-import { useState } from "react";
-
+import { useState } from 'react';
+import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 const data = [
-  // Semana 1 (Abril 2025)
   { fecha: "Lunes 01/04", Cantidad: 1200 },
   { fecha: "Martes 02/04", Cantidad: 2300 },
   { fecha: "Miércoles 03/04", Cantidad: 1800 },
@@ -19,8 +8,6 @@ const data = [
   { fecha: "Viernes 05/04", Cantidad: 4000 },
   { fecha: "Sábado 06/04", Cantidad: 5200 },
   { fecha: "Domingo 07/04", Cantidad: 2900 },
-
-  // Semana 2 (Abril 2025)
   { fecha: "Lunes 08/04", Cantidad: 1500 },
   { fecha: "Martes 09/04", Cantidad: 2500 },
   { fecha: "Miércoles 10/04", Cantidad: 2000 },
@@ -30,39 +17,41 @@ const data = [
   { fecha: "Domingo 14/04", Cantidad: 2700 },
 ];
 
-export default function MovimientosSemanales() {
-
-    const [movimientosSemanales,setMovimientosSemanales] = useState<any[]>([])
-
-    return (  
-        <article className="w-full h-full flex flex-col items-center p-3 border rounded-lg border-black text-black duration-700">
-          <div className="w-full h-full flex justify-center">
-            <h1 className="font-semibold">Ventas de la Semana</h1>
-          </div>  
-            <ResponsiveContainer width="100%" height="100%">
-                <LineChart  
-                    width={500}
-                    height={300}    
-                    data={data}
-                    margin={{
-                        top: 5,
-                        right: 30,
-                        left: 20,
-                        bottom: 5,
-                    }}
-                >
-                    <CartesianGrid strokeDasharray="3 3" stroke="black"  />
-                    <XAxis dataKey="fecha" fontSize={"18px"}stroke="black" tick = {{fill : "black"}} />
-                    <YAxis />
-                    <Tooltip />
-                    <Line
-                        type="monotone"
-                        dataKey="Cantidad"
-                        stroke={"black"}
-                        activeDot={{ r: 8 }}
-                    />
-                </LineChart>
-            </ResponsiveContainer>
+const MovimientosSemanales = () => {
+    const [movimientosSemanales, setMovimientosSemanales] = useState<any[]>([]);
+    return (
+        <article className="flex flex-1 flex-col gap-3 min-w-[300px] items-center p-2 rounded-md  bg-[#1a1b22] text-white duration-700 hover:brightness-125">
+            <h1 className="font-bold">Ventas de la Semana</h1>
+            <div className="w-full h-[250px]">
+                <ResponsiveContainer  width="100%" height="100%" debounce={300}>
+                    <AreaChart
+                        data={data}
+                        margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
+                    >
+                        <CartesianGrid strokeDasharray="5 5" stroke="white" />
+                        <XAxis dataKey="fecha" stroke="white" tick={{ fill: "white" }} />
+                        <YAxis stroke="white" />
+                        <Tooltip contentStyle={{
+                        backgroundColor : "black"
+                        }}/>
+                        <defs>
+                            <linearGradient id='gradient' x1={"0%"} y1={"0%"} x2={"0%"} y2={"100%"}>
+                                <stop offset={"10%"} stopColor='#b757d4' stopOpacity={1}>
+                                </stop>
+                                <stop offset={"90%"} stopColor='#b757d4' stopOpacity={0.01}></stop>
+                            </linearGradient>
+                        </defs>
+                        <Area
+                            type="monotone"
+                            dataKey="Cantidad"
+                            stroke="white"
+                            fill="url(#gradient)"
+                            fillOpacity={1}
+                        />
+                    </AreaChart>
+                </ResponsiveContainer>
+            </div>
         </article>
     );
-}
+};
+export default MovimientosSemanales;

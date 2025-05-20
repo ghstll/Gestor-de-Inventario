@@ -18,7 +18,7 @@ import pdf_icon from '../../../assets/icons/format/pdf_icon.png';
 
 export default function GeneracionAutomaticaCard({...props}: Props) { 
   return (
-    <article className={`border border-black rounded-md p-2 w-full ${props.activo ? "bg-gradient-to-r from-green-200  to-orange-100" : "bg-gradient-to-r from-gray-300 to-gray-400"} hover:brightness-110 duration-500 cursor-pointer flex flex-col gap-4 hover:scale-[1.02]`} onClick={()=> {props.setIsOpenModal(!props.isOpenModal); props.setIdSelected(props.id)}} id={props.id.toString()}>
+    <article className={`border border-white rounded-md p-2 w-full ${props.activo ? "bg-gradient-to-r from-green-800  to-green-500" : "bg-gradient-to-r from-gray-300 to-gray-400"} hover:brightness-110 duration-500 cursor-pointer flex flex-col gap-4 hover:scale-[1.02]`} onClick={()=> {props.setIsOpenModal(!props.isOpenModal); props.setIdSelected(props.id)}} id={props.id.toString()}>
         <div className='flex items-center justify-between'>
 			<h1 className="font-bold">{props.title}</h1>
 			<h1 className='font-bold'>Proxima generacion : {props.fecha_final.getDate()} - {props.fecha_final.getMonth()+1} - {props.fecha_final.getFullYear()}</h1>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head><meta charset="UTF-8"><title>Orden</title></head>
+  <style>
+    html,body{
+      margin: 0;
+    }
+    #titulopdf {
+      color: green;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #titulo{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #titulo span{
+      font-size: 40px;
+
+    }
+
+    header{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      
+    }
+  </style>
+  <body>
+    <header>
+      <img src="../../shared/assets/images/Copia de Copia de SATI+ (1).png" alt="" width="400">
+      <div id="titulo">
+        <span>Orden</span>
+        <span>De</span>
+        <span>Compra</span>
+      </div>
+    </header>
+    <div>
+      <section>
+        <h4>79050, Altavista, Cdad. Valles, S.L.P.</h4>
+      </section>
+    </div>
+    <h1 id="titulopdf">Orden de asdasd</h1>
+    <p>Cliente: {{cliente}}</p>
+    <p>Producto: {{producto}}</p>
+    <p>Cantidad: {{cantidad}}</p>
+  </body>
+</html>

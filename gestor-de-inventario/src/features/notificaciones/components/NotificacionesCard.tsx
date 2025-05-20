@@ -1,46 +1,38 @@
-export default function NotificacionesCard({title,description,date,icon,time,notificationType} : {title : string , description : string , date : string , icon  : string , time? : string , notificationType : string}){
-    
-    const getColor = ()=>{
-        if(notificationType == "Producto agotado"  ){
-            return "text-[#DC2626]"
-        }
-        if(notificationType == "Stock bajo"){
-            return "text-[#F97316]"
-        }
-        if(notificationType == "Reporte generado"){
-            return "text-[#3B82F6]"
-        }
-        if(notificationType == "Sugerencia"){
-            return "text-[#22C55E]"
-        }
-        if(notificationType == "Vencimiento"){
-            return "text-[#8B5CF6]"
-        }
-        return "text-gray-600"
-    }
-    
-    
+interface props {
+    id : number;
+    tipo : string;
+    mensaje : string;
+    fecha : string;
+    hora : string;
+    urgente : boolean;
+    visto : boolean;
+    color : string;
+}
+import NotificacionIcon from '../../../shared/assets/icons/notifications_icons/default.svg';
+export default function NotificacionesCard({...notificacion} : props){
+
+    const fecha = new Date(notificacion.fecha)
+    const day = fecha.getDate()
+    const month = fecha.getMonth() + 1
+    const year = fecha.getFullYear()
+
     return(
-        <article className="border border-black rounded-sm min-h-[100px] w-full p-3">
-            <div className="flex items-center gap-4">
+        <article className="border border-white rounded-md h-fit  w-[80%] p-3 cursor-pointer hover:scale-[1.01] hover:brightness-125 duration-500 flex items-center" style={{backgroundColor : notificacion.color}}>
+            <div className="flex justify-between gap-4 w-full">
                 <div className="rounded-full border border-black p-2">
-                    <img src={icon} alt="" width={40} height={40} />
+                    <img src={NotificacionIcon} alt="" width={30} height={30} />
                 </div>
                 <div>
-                        <div className="flex">
-                            <div className={`font-bold ${getColor()}`}>
-                                {title}
-                            </div>
-                            {/* <div>
-                                {time}
-                            </div> */}
-                        </div>
-                        <div>
-                            {description}
-                        </div>
+                    <h1>{day} - {month} - {year}</h1>
+                    <div className='flex gap-3'>
+                        <h1 className='font-bold'>Tipo de notificacion : </h1>
+                        <h1>{notificacion.tipo}</h1>
+                    </div>
                 </div>
-                <button className="border border-black rounded-md whitespace-nowrap p-1">Mas detalles</button>
-            </div>
+                <div>
+                    <h1>{notificacion.mensaje}</h1>
+                </div>
+            </div>  
         </article>
-    )   
+    )
 }

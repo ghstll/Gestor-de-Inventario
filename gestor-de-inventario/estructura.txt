@@ -5,6 +5,7 @@ C:.
 |   eslint.config.js
 |   estructura.txt
 |   index.html
+|   orden_compra.pdf
 |   package-lock.json
 |   package.json
 |   potcss.config.js
@@ -15,7 +16,9 @@ C:.
 |   tsconfig.node.json
 |   vite.config.ts
 |   
-          
+|   |   .package-lock.json
+|   |   
+|   
 +---public
 |       logo_imss.png
 |       vite.svg
@@ -25,33 +28,66 @@ C:.
     |   main.tsx
     |   vite-env.d.ts
     |   
-    +---api
-    |   |   api.mjs
+    +---app
+    |       index.css
+    |       Routes.tsx
+    |       
+    +---backend
+    |   |   app.mjs
+    |   |   ordendecompra.mjs
+    |   |   verificadorReportesAutomaticos.ts
     |   |   
     |   +---db
     |   |       connection.mjs
     |   |       
     |   \---routes
     |           actividadReciente.mjs
+    |           agregarProveedores.mjs
+    |           confAutoReportes.mjs
+    |           eliminarConf.mjs
+    |           estadoConfAutoReporte.mjs
+    |           eventosOrdenesCompra.mjs
+    |           getNotificaciones.mjs
+    |           getProveedores.mjs
+    |           nuevaConfAutoReporte.mjs
     |           prodcuctosBajoStock.mjs
+    |           productos.routes.mjs
+    |           ultimosReportes.mjs
     |           
-    +---app
-    |       index.css
-    |       Routes.tsx
-    |       
     +---data
     |   \---json_files
-    |           conf_auto_reportes.json
-    |           cont_auto_ordenes_compra.json
-    |           notifications_data.json
-    |           
+    |       |   conf_auto_reportes.json
+    |       |   cont_auto_ordenes_compra.json
+    |       |   ultimosReportesAnaliticos.json
+    |       |   
+    |       \---test
+    |               eventosOrdenesCompra.json
+    |               ReportesAnaliticos.json
+    |               
     +---features
+    |   +---baseDeDatos
+    |   |   \---proveedores
+    |   |       +---components
+    |   |       |       ProveedorAgregar.tsx
+    |   |       |       ProveedorAgregarCard.tsx
+    |   |       |       Proveedores_Agregar_Form.tsx
+    |   |       |       ProveedorImportarModal.tsx
+    |   |       |       ToastProveedor.tsx
+    |   |       |       
+    |   |       \---pages
+    |   |               Proveedores.tsx
+    |   |               
     |   +---dashboard
     |   |   +---components
     |   |   |       ActividadReciente.tsx
     |   |   |       BarChartD.tsx
+    |   |   |       BarChartHorizontal.tsx
+    |   |   |       CalendarComp.css
+    |   |   |       CalendarComp.tsx
     |   |   |       MovimientosSemanales.tsx
+    |   |   |       PedidosPorProveedor.tsx
     |   |   |       ProductosAgotados.tsx
+    |   |   |       Recepciones.tsx
     |   |   |       Ventas.tsx
     |   |   |       
     |   |   \---pages
@@ -59,24 +95,43 @@ C:.
     |   |           
     |   +---generacionAutomatica
     |   |   +---components
-    |   |   |       GeneracionAutomaticaBtn.tsx
-    |   |   |       GeneracionAutomaticaReportesCard.tsx
-    |   |   |       GeneracionAutomaticaReportesModal.tsx
-    |   |   |       
     |   |   \---pages
-    |   |           GeneracionAutomaticaMainPage.tsx
-    |   |           GeneracionAutomaticaOrdenesPage.tsx
-    |   |           GeneracionAutomaticaReportesPage.tsx
-    |   |           
+    |   |       |   GeneracionAutomaticaMainPage.tsx
+    |   |       |   
+    |   |       +---GeneracionAutomaticaReportes
+    |   |       |   |   GeneracionAutomaticaReportes_Container.tsx
+    |   |       |   |   GeneracionAutomaticaReportes_TipoPage.tsx
+    |   |       |   |   
+    |   |       |   \---GeneracionAutomaticaOperaciones
+    |   |       |           GeneracionAutomaticaOperacioens_Container.tsx
+    |   |       |           GeneracionAutomaticaOperaciones_TipoPage.tsx
+    |   |       |           
+    |   |       \---GeneracionAutomaticaVentas
     |   +---notificaciones
     |   |   +---components
     |   |   |       NotificacionesCard.tsx
+    |   |   |       NotificacionesFiltrar.tsx
     |   |   |       
     |   |   \---pages
     |   |           NotificacionesPage.tsx
     |   |           
+    |   +---operaciones
+    |   |   \---recepciones
+    |   |       +---components
+    |   |       \---pages
     |   +---ordenesCompra
     |   |   +---components
+    |   |   |       NuevaOrdenCompra.tsx
+    |   |   |       OrdenesCompraEventos.tsx
+    |   |   |       OrdenesCompraEventosDia.tsx
+    |   |   |       OrdenesCompraEventosDiaCard.tsx
+    |   |   |       OrdenesCompraMesGrafica.tsx
+    |   |   |       OrdenesCompraProductosBajoStock.tsx
+    |   |   |       OrdenesCompraProductosBajoStockCard.tsx
+    |   |   |       OrdenesCompraRecientes.tsx
+    |   |   |       OrdenesCompraRecientesCard.tsx
+    |   |   |       ProductoOrdenCompraCard.tsx
+    |   |   |       
     |   |   \---pages
     |   |           OrdenesDeCompraPage.tsx
     |   |           
@@ -86,13 +141,23 @@ C:.
     |               ReportesAnaliticosPage.tsx
     |               
     +---reports
-    |       InventarioFisicoReport.tsx
-    |       ReportPreview.tsx
-    |       
-    +---Routes
+    |   |   InventarioFisicoReport.tsx
+    |   |   ReportPreview.tsx
+    |   |   
+    |   +---ordenDeCompra
+    |   |       ordenDeCompra_plantilla.html
+    |   |       
+    |   \---reportes
+    |           ReporteAnalitico.tsx
+    |           
     \---shared
+        |   scrollbarcss.css
+        |   
         +---assets
         |   +---icons
+        |   |   |   box.svg
+        |   |   |   chevron-compact-down.svg
+        |   |   |   
         |   |   +---asideMenu
         |   |   |       AjustarIcon.svg
         |   |   |       AnaliticosIcon.svg
@@ -105,7 +170,6 @@ C:.
         |   |   |       ConsultarIcon.svg
         |   |   |       ConsultarKardexIcon.svg
         |   |   |       DevolucionesIcon.svg
-        |   |   |       erasebg-transformed.png
         |   |   |       ExistenciasIcon.svg
         |   |   |       FisicoKardexIcon.svg
         |   |   |       HistoricoIcon.svg
@@ -134,8 +198,17 @@ C:.
         |   |   |       pdf_icon.png
         |   |   |       
         |   |   +---GeneracionAutomatica
+        |   |   |       AnaliticosIcon.svg
+        |   |   |       ArticulosAGranelIcon.svg
+        |   |   |       ArticulosIcon.svg
+        |   |   |       CambiosDePrecioIcon.svg
+        |   |   |       ExistenciasIcon.svg
+        |   |   |       MovimientosIcon.svg
         |   |   |       OrdenesDeCompraIcon.svg
+        |   |   |       ProveedoresIcon.svg
         |   |   |       ReportIcon.svg
+        |   |   |       ResumenIcon.svg
+        |   |   |       VentasIcon.svg
         |   |   |       
         |   |   \---notifications_icons
         |   |           default.svg
@@ -145,17 +218,54 @@ C:.
         |   |           vencimiento.svg
         |   |           
         |   \---images
+        |           Copia de Copia de SATI+ (1).png
+        |           imss_banner.png
+        |           
         \---components
             +---AsideMenu
             |       AsideMenu.tsx
             |       AsideMenuButton.tsx
             |       AsideMenuSection.tsx
             |       
+            +---reportes
+            |       ReportesGrid.tsx
+            |       ReportesHeader.tsx
+            |       
             \---UI
-                    FormParamsReportContainer.tsx
-                    FormParamsReportDateRange.tsx
-                    FormParamsReportDepartamento.tsx
-                    FormParamsReportEstado.tsx
-                    FormParamsReportFolioRange.tsx
-                    FormParamsReportProveedor.tsx
-                    
+                |   FormParamsReportContainer.tsx
+                |   FormParamsReportDateRange.tsx
+                |   FormParamsReportDepartamento.tsx
+                |   FormParamsReportEstado.tsx
+                |   FormParamsReportFolioRange.tsx
+                |   FormParamsReportProveedor.tsx
+                |   ModalContainer.tsx
+                |   
+                +---buttons
+                |       ButtonParametrosReporte.tsx
+                |       
+                +---generacionAutomatica
+                |   |   GeneracionAutomaticaCard.tsx
+                |   |   GeneracionAutomaticaConfiguracionWindow.tsx
+                |   |   GeneracionAutomaticaEstadoContainer.tsx
+                |   |   GeneracionAutomaticaModal_Modificar.tsx
+                |   |   GeneracionAutomaticaTipo.tsx
+                |   |   
+                |   \---GeneracionAutomaticaNuevaConfig_Comps
+                |           GeneracionAutomaticaNuevaConfig_Destinatarios.tsx
+                |           GeneracionAutomaticaNuevaConfig_Formatos.tsx
+                |           GeneracionAutomaticaNuevaConfig_Nombre.tsx
+                |           GeneracionAutomaticaNuevaConfig_Operacion.tsx
+                |           GeneracionAutomaticaNuevaConfig_Periodicidad.tsx
+                |           
+                +---parametrosReporte
+                |       ParametrosReporteContainer.tsx
+                |       ParametrosReporteFechaRango.tsx
+                |       ParametrosReporteOperaciones.tsx
+                |       
+                +---reportePreview
+                |       ReportePreview.tsx
+                |       
+                \---ultimosReportesGenerados
+                        UltimosReportesGeneradosCard.tsx
+                        UltimosReportesGeneradosContainer.tsx
+                        

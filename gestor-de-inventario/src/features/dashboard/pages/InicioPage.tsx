@@ -1,58 +1,37 @@
+import ventaIcon from '../../../shared/assets/icons/asideMenu/VentasIcon.svg';
 import AsideMenu from "../../../shared/components/AsideMenu/AsideMenu";
 import "../../../shared/scrollbarcss.css";
-import ActividadReciente from "../components/ActividadReciente";
-import BarChartD from "../components/BarChartD";
+import ComparacionVentasChart from "../components/ComparacionVentasChart";
+import FastInfoCard from "../components/fastInfoCard";
 import MovimientosSemanales from "../components/MovimientosSemanales";
-import Ventas from "../components/Ventas";
-
-const frasesBienvenida = [
-    "¡Bienvenido de nuevo! Tu inventario te está esperando.",
-    "Todo listo para comenzar tu jornada. ¡Gestionemos juntos!",
-    "Tus productos están en buenas manos. ¿Listo para revisar?",
-    "Hola 👋 ¿Qué querés hacer hoy en el sistema?",
-    "Gestión eficiente comienza con un buen inicio. ¡Bienvenido!",
-    "¡Es un buen día para optimizar tu inventario!",
-    "Control total al alcance de un clic. ¡Vamos allá!",
-    "¡Hola! Gracias por confiar en nuestro sistema.",
-    "¿Problemas con el stock? Estamos para ayudarte.",
-    "Bienvenido al panel. Tu inventario, tus reglas.",
-    "Tu operación más ágil que nunca. ¡A trabajar!",
-    "¡Listo para revisar existencias y movimientos!",
-    "El orden comienza aquí. Bienvenido al sistema.",
-    "Seguimos cuidando tus productos como el primer día.",
-    "Hola, administrador. ¡Es hora de tomar el control!"
-  ];
-  
-
+import PedidosPorProveedor from "../components/PedidosPorProveedor";
+// Functions
+import ProductosBajoStock from "../components/ProductosBajoStock";
 export default function InicioPage() {
     return (
         <div className="flex box-border w-screen h-full">
             <AsideMenu></AsideMenu>
-            <main className="w-screen h-full flex">
-                <div className="flex w-full flex-col p-4">
-                    <h1 className="font-semibold italic text-4xl ml-10">{frasesBienvenida[Math.floor(Math.random() * frasesBienvenida.length)]}</h1>
-                    <div className="h-full w-full flex p-5 flex-col gap-5 overflow-auto">
-                        <section className="flex gap-4 max-h-[450px]">
-                            <div className="flex flex-col gap-2 w-[70%]">
-                                <div  className="flex gap-1 overflow-auto w-full h-[150px] scrollbarclass" >
-                                    <Ventas ></Ventas>
-                                    <Ventas ></Ventas>
-                                    <Ventas ></Ventas>
-                                </div>
-                                <div>
-                                    <BarChartD></BarChartD>
-                                </div>
-                            </div>
-                            <div className="w-[30%] h-full">
-                                <ActividadReciente></ActividadReciente>
-                            </div>
-                        </section>
-                        <section className="w-full h-[250px]">
-                            <MovimientosSemanales ></MovimientosSemanales>
-                        </section>
-                    </div>
-                </div>
+            <main className="w-screen h-screen flex flex-col bg-[#141519] p-3 gap-6 overflow-y-auto scrollbarclass"  >
+                <section className="p-1">
+                    <h1 className="font-semibold italic text-xl ml-10 text-white">Panel de Control</h1>
+                </section>
+                <section className="grid grid-cols-2 gap-2">
+                    <FastInfoCard title="Ventas del dia" value="12" percent={20.1} iconsvg={ventaIcon} description='Ventas realizadas' positive = {true}></FastInfoCard>
+                    <FastInfoCard title="Devoluciones del mes" value="12" percent={20.1} iconsvg={ventaIcon} description='Devoluciones registradas' positive = {false}></FastInfoCard>
+                    <FastInfoCard title="Reportes generados en el dia" value="12" percent={20.1} iconsvg={ventaIcon} description='Reportes realizados' positive = {false}></FastInfoCard>
+                    <FastInfoCard title="Reportes generados en el dia" value="12" percent={20.1} iconsvg={ventaIcon} description='Reportes realizados' positive = {false}></FastInfoCard>
+                </section>
+                <section className="flex flex-wrap gap-5 h-fit w-full min-w-[400px]">
+                    <ProductosBajoStock></ProductosBajoStock>
+                </section>
+                <section className="p-1">
+                    <ComparacionVentasChart></ComparacionVentasChart>
+                </section>
+                <section className="flex flex-wrap gap-5 h-fit w-full min-w-[200px] ">
+                    <MovimientosSemanales></MovimientosSemanales>
+                    <PedidosPorProveedor></PedidosPorProveedor>
+                </section>
             </main>
-        </div>
+        </div>  
     );
 }

@@ -4,7 +4,7 @@ interface props {
 }
 export default function ButtonParametrosReportes({text , onClick} : props) {
   return (
-    <button onClick={onClick} className="border border-black rounded-md p-1 bg-white hover:bg-gray-200 duration-300" >
+    <button onClick={onClick} className="border border-white rounded-md p-1 bg-black text-white hover:bg-gray-800 duration-300" >
         {text}
     </button>
   )

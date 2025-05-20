@@ -27,7 +27,7 @@ import csv_icon from '../../../../shared/assets/icons/format/csv_icon.png';
 import excel_icon from '../../../../shared/assets/icons/format/excel_icon.png';
 import pdf_icon from '../../../../shared/assets/icons/format/pdf_icon.png';
 
-export default function UltimosReportesGeneradosCard({ultimoReporte } : props){
+export default function UltimosReportesGeneradosCard({ultimoReporte} : props){
 
     const formatDate = (date : string) : string[] =>{
         const fecha = date.split('T')[0]
@@ -39,7 +39,7 @@ export default function UltimosReportesGeneradosCard({ultimoReporte } : props){
     }
 
     return(
-        <article className="flex flex-col border border-black rounded-md p-2 bg-white cursor-pointer hover:bg-gray-100 duration-200">
+        <article className="flex flex-col border border-white rounded-md p-2 bg-black cursor-pointer hover:bg-gray-900 duration-200">
             <div className='flex gap-2 font-semibold italic'>
                 {
                     formatDate(ultimoReporte.fecha_generacion).map((obj)=>{

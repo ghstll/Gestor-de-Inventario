@@ -102,7 +102,7 @@ const GeneracionAutomaticaReportes_Container = ({ tipoReporte }: Props) => {
         setDestinatarios([]);
     }, [isOpenModalNuevaConfiguracion]);
 
-
+    
  //useEffect para modificar una configuracion
     useEffect(() =>{
         if(isOpenModal && selectedObj){
@@ -212,11 +212,11 @@ const GeneracionAutomaticaReportes_Container = ({ tipoReporte }: Props) => {
     return (
         <div className="flex box-border h-screen">
             {/* Menú lateral */}
-            <AsideMenu />
+            <AsideMenu notificacionesNuevas={3}/>
 
             {/* Contenido principal */}
-            <main className="w-full h-full flex justify-center p-1 bg-gray-200">
-                <div className="border border-black w-[85%] rounded-lg p-5 bg-white overflow-auto scrollbarclass">
+            <main className="w-full h-full flex justify-center p-1 bg-black">
+                <div className="border border-white w-[85%] rounded-lg p-5 bg-black overflow-auto scrollbarclass text-white">
                     
                     {/* Navegación de encabezado */}
                     <div className="flex justify-between items-center">
@@ -235,7 +235,7 @@ const GeneracionAutomaticaReportes_Container = ({ tipoReporte }: Props) => {
                         </button>
                     </div>
 
-                    <hr />
+                    <hr className="border border-white"/>
 
                     {/* Reportes activos */}
                     <GeneracionAutomaticaEstadoContainer estado="Activos">
@@ -299,5 +299,4 @@ const GeneracionAutomaticaReportes_Container = ({ tipoReporte }: Props) => {
         </div>
     );
 };
-
 export default GeneracionAutomaticaReportes_Container;

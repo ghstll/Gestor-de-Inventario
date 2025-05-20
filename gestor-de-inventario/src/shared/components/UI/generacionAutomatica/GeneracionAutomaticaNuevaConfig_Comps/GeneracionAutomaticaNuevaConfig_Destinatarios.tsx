@@ -43,7 +43,7 @@ export default function GeneracionAutomaticaNuevaConfig_Destinatarios({...props}
         <article className="flex flex-col gap-3">
             <div className="flex gap-4 items-center">
                 <h1 className="font-semibold">Agregar destinatarios : </h1>
-                <input type="email" placeholder="Correo del des tinatario" className="border border-black rounded-md p-1 placeholder:italic bg-transparent" ref={inputCorreoRef} onKeyDown={(e)=>{
+                <input type="email" placeholder="Correo del destinatario" className="border border-white rounded-md p-1 placeholder:italic bg-transparent" ref={inputCorreoRef} onKeyDown={(e)=>{
                     if(e.key === "Enter"){
                         e.preventDefault()
                         const input = e.target as HTMLInputElement
@@ -55,7 +55,7 @@ export default function GeneracionAutomaticaNuevaConfig_Destinatarios({...props}
                         }
                     }
                 }} />
-                <button className="p-1 border border-black rounded-md font-medium" type="button"
+                <button className="p-1 border border-white rounded-md font-medium" type="button"
                     onClick={() =>{
                         const input = inputCorreoRef.current
                         if(input && input.value !== ""){
@@ -72,11 +72,11 @@ export default function GeneracionAutomaticaNuevaConfig_Destinatarios({...props}
                 >Agregar</button>
             
             </div>
-            <div className="flex flex-col gap-4 ml-5 max-h-[150px] overflow-y-auto scrollbarclass p-2 bg-gray-200">
+            <div className="flex flex-col gap-4 ml-5 max-h-[150px] overflow-y-auto scrollbarclass border-white border rounded-md p-2 bg-black">
                 <h1 className="italic">Da click sobre los correos para eliminarlos</h1>
                 {destinatarios.map((destinatario : string,index : number) => {
                     return(
-                        <div className="border border-black p-2 cursor-pointer rounded-md hover:bg-[#a23b3b] hover:text-white duration-300" id={index.toString()} key={index} onClick={(e) => deleteDestinatario(e.currentTarget.id)}>
+                        <div className="border border-white p-2 cursor-pointer rounded-md hover:bg-[#a23b3b] hover:text-white duration-300" id={index.toString()} key={index} onClick={(e) => deleteDestinatario(e.currentTarget.id)}>
                             <h1 className="font-medium">{destinatario}</h1>
                         </div>
                     )

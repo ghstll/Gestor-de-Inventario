@@ -64,14 +64,14 @@
         <article className="flex gap-5  flex-col">
             <div className="flex gap-3 items-center">
                 <h1 className="font-medium">Periodicidad : </h1>
-                <input type="number" className="border border-black rounded-md p-1" placeholder={periodicidadDias.toString()} required onChange={handlePeriodicidadInputChange}/>
+                <input type="number" className="border border-white rounded-md p-1 bg-transparent" placeholder={periodicidadDias.toString()} required onChange={handlePeriodicidadInputChange}/>
                 <h1 className="font-medium">Dias</h1>
             </div>
             <div className="flex gap-3 items-center">
                 <h2 className="font-medium">Fecha Inicial :</h2>
-                <h1 className="border-black p-1 border rounded-md">{fechaInicial.getDate()}-{fechaInicial.getMonth()+1}-{fechaInicial.getFullYear()}</h1>
+                <h1 className="border-white p-1 border rounded-md">{fechaInicial.getDate()}-{fechaInicial.getMonth()+1}-{fechaInicial.getFullYear()}</h1>
                 <h2 className="font-medium">Fecha Final (Proxima generacion) :</h2>
-                <h1 className="border-black p-1 border rounded-md">{fechaFinal.getDate()}-{fechaFinal.getMonth()+1}-{fechaFinal.getFullYear()}</h1>
+                <h1 className="border-white p-1 border rounded-md">{fechaFinal.getDate()}-{fechaFinal.getMonth()+1}-{fechaFinal.getFullYear()}</h1>
             </div>
         </article>
     )

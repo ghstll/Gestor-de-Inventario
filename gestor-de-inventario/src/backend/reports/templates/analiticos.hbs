@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{titulo}}</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            width: 100%;
+            border: 1px solid #000;
+        }
+
+        .grid-header, .grid-cell {
+            padding: 0.5rem;
+            border: 1px solid #000;
+            text-align: center;
+        }
+
+        .grid-header {
+            font-weight: bold;
+            background-color: #f0f0f0;
+        }
+
+        h1, h3 {
+            margin: 0.5rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h3>DIRECCIÓN DE PRESTACIONES ECONÓMICAS Y SOCIALES</h3>
+        <h3>COORDINACIÓN DE CENTROS VACACIONALES, VELATORIOS, UNIDAD DE CONGRESOS Y TIENDAS</h3>
+        <h3>SISTEMA NACIONAL DE TIENDAS IMSS - SNTSS</h3>
+        <h1>Notas de {{operacion}}</h1>
+        <h2>Del día: {{fechaInicial}} al día: {{fechaFinal}}</h2>
+    </header>
+    
+    <section class="grid-container">
+        {{#each columnas}}
+            <div class="grid-header">{{this}}</div>
+        {{/each}}
+        {{#each filas}}
+            <div class="grid-cell">{{folio}}</div>
+            <div class="grid-cell">{{fecha}}</div>
+            <div class="grid-cell">{{proveedor}}</div>
+            <div class="grid-cell">{{nombre}}</div>
+            <div class="grid-cell">{{subtotal}}</div>
+            <div class="grid-cell">{{iva}}</div>
+            <div class="grid-cell">{{ieps}}</div>
+            <div class="grid-cell">{{total}}</div>
+        {{/each}}
+        <div style="grid-column: span 3; display: flex; gap: 4px;">
+            <h4>No. de Notas : </h4>
+            <h4>{{count_notas}}</h4>
+        </div>
+        <div style="display: flex; gap: 4px;">
+            <h4>Totales : </h4>
+        </div>
+        <div style="display: flex; gap: 4px;">
+            <h4>{{count_subtotal}}</h4>
+        </div>
+         <div style="display: flex; gap: 4px;">
+            <h4>{{count_iva}}</h4>
+        </div>
+         <div style="display: flex; gap: 4px;">
+            <h4>{{count_ieps}}</h4>
+        </div>
+         <div style="display: flex; gap: 4px;">
+            <h4>{{count_total}}</h4>
+        </div>
+    </section>
+</body>
+</html>

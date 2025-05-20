@@ -1,13 +1,17 @@
 import { createBrowserRouter } from "react-router-dom";
 
+import Proveedores from "../features/baseDeDatos/proveedores/pages/Proveedores";
 import InicioPage from "../features/dashboard/pages/InicioPage";
 import GeneracionAutomaticaMainPage from "../features/generacionAutomatica/pages/GeneracionAutomaticaMainPage";
 import GeneracionAutomaticaOperaciones_TipoPage from "../features/generacionAutomatica/pages/GeneracionAutomaticaReportes/GeneracionAutomaticaOperaciones/GeneracionAutomaticaOperaciones_TipoPage";
 import GeneracionAutomaticaReportes_Container from "../features/generacionAutomatica/pages/GeneracionAutomaticaReportes/GeneracionAutomaticaReportes_Container";
 import GeneracionAutomaticaReportes_TipoPage from "../features/generacionAutomatica/pages/GeneracionAutomaticaReportes/GeneracionAutomaticaReportes_TipoPage";
 import NotificaionesPage from "../features/notificaciones/pages/NotificacionesPage";
+import RecepcionesPage from "../features/operaciones/recepciones/pages/RecepcionesPage";
 import OrdenesDeCompraPage from "../features/ordenesCompra/pages/OrdenesDeCompraPage";
 import ReportesAnaliticosPage from "../features/reportes/pages/ReportesAnaliticosPage";
+import ResumenesPage from "../features/reportes/pages/ResumenesPage";
+import VentasPage from "../features/reportes/pages/VentasPage";
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -26,9 +30,22 @@ export const router = createBrowserRouter([
         element: <OrdenesDeCompraPage></OrdenesDeCompraPage>,
     },
     {
+        path: "/operaciones/recepciones",
+        element: <RecepcionesPage></RecepcionesPage>,
+    },
+    {
         path: "/reportes/analiticos",
         element: <ReportesAnaliticosPage></ReportesAnaliticosPage>,
     },
+    {
+        path: "/reportes/resumenes",
+        element: <ResumenesPage></ResumenesPage>,
+    },
+    {
+        path: "/reportes/ventas",
+        element: <VentasPage></VentasPage>,
+    },
+    
     // {
     //     path : "/testreporte",
     //     element : <ReporteAnalitico></ReporteAnalitico>
@@ -95,6 +112,9 @@ export const router = createBrowserRouter([
     {
         path : "/generacionautomatica/operaciones",
         element : <GeneracionAutomaticaOperaciones_TipoPage></GeneracionAutomaticaOperaciones_TipoPage>
+    },
+    {
+        path : "/proveedores",
+        element : <Proveedores></Proveedores>
     }
-    
 ]);

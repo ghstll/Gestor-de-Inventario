@@ -29,9 +29,9 @@ export default function GeneracionAutomaticaNuevaConfig_Nombre({...props} : prop
     }
   },[props.loadNombre])
   return (
-    <article className="flex gap-3">
+    <article className="flex gap-3 text-white">
         <h1 className="font-medium">Nombre de la configuracion : </h1>
-        <input type="text" className="p-1 border border-black rounded-md placeholder:italic bg-transparent" value={nombreConfiguracion} placeholder="Configuracion de Reportes Analiticos mensuales" maxLength={45} onChange={handleInputNombreChange}/>
+        <input type="text" className="p-1 border border-white rounded-md placeholder:italic bg-transparent" value={nombreConfiguracion} placeholder="Configuracion de Reportes Analiticos mensuales" maxLength={45} onChange={handleInputNombreChange}/>
     </article>
   )
 }

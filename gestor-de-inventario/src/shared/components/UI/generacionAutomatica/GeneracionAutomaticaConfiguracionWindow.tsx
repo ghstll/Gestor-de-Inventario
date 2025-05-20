@@ -71,7 +71,7 @@
             }
             setIsSaving(true)
             
-            try {
+            try {   
                 const response = await fetch("http://localhost:3001/api/confautoreportes/agregarconf", {
                 method: "POST",
                 headers: {
@@ -214,7 +214,7 @@
 
 
         return (
-            <form className={`w-fit max-w-[80%] h-fit p-10 ${buttonEstadoText == "Desactivar" ? 'bg-blue-50' : 'bg-slate-300' } transition-all duration-700 rounded-md flex flex-col border-[10px] border-transparent gap-5 overflow-hidden`} onClick={(e) => e.stopPropagation()}
+            <form className={`w-fit max-w-[80%] h-fit p-10 ${buttonEstadoText == "Desactivar" ? 'bg-black' : 'bg-black' } transition-all duration-700 rounded-md flex flex-col border text-white border-white gap-5 overflow-hidden`} onClick={(e) => e.stopPropagation()}
                 onSubmit={saveConf}
             >
                 
@@ -222,18 +222,18 @@
                 { 
                     formData.nombreConfig ? (<h1 className="text-lg italic">{formData.nombreConfig}</h1>) : null  
                 }           
-                <hr className="border-none bg-black h-[1px]"/>
+                <hr className="border-none bg-white h-[1px]"/>
                 <div className="flex flex-col gap-4">
                     {windowsConfig.children}
                 </div>
                 <div className={`w-full flex ${windowsConfig.tipo == 1 ? "justify-between" : "justify-end"} gap-4 font-normal`}>
                     { windowsConfig.tipo ==  1 ? <div className="flex gap-3">
-                        <button className="border border-black rounded-md p-2 bg-gray-400 hover:brightness-125 duration-300" type="button" onClick={handleClickChangeEstado}>{buttonEstadoText}</button>
-                        <button className="border border-black rounded-md p-2 bg-red-700 hover:brightness-125 duration-300" onClick={deleteConf}>Eliminar</button>
+                        <button className="border border-white rounded-md p-2 bg-gray-400 hover:brightness-125 duration-300" type="button" onClick={handleClickChangeEstado}>{buttonEstadoText}</button>
+                        <button className="border border-white rounded-md p-2 bg-red-700 hover:brightness-125 duration-300" onClick={deleteConf}>Eliminar</button>
                     </div>: '' }
                     <div className="flex gap-3">
-                        <button type="submit" className="border border-black rounded-md p-2 bg-green-500 hover:brightness-125 duration-300" disabled = {isSaving}>{windowsConfig.tipo == 1 ? "Guardar cambios" : "Agregar configuracion"}</button>
-                        <button type="button" className="border border-black rounded-md p-2 bg-yellow-500 hover:brightness-125 duration-300">Cancelar</button>
+                        <button type="submit" className="border border-white rounded-md p-2 bg-green-600 hover:brightness-125 duration-300" disabled = {isSaving}>{windowsConfig.tipo == 1 ? "Guardar cambios" : "Agregar configuracion"}</button>
+                        <button type="button" className="border border-white rounded-md p-2 bg-yellow-600 hover:brightness-125 duration-300">Cancelar</button>
                     </div>
                 </div>
             </form>

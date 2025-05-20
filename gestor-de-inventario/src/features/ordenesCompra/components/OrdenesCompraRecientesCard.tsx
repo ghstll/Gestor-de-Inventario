@@ -9,7 +9,7 @@ interface props {
 
 export default function OrdenesCompraRecientesCard(props : props){
     return(
-        <article className="border border-black min-w-full flex items-center justify-between p-2 rounded-md">
+        <article className="bg-[#0a0a0a] min-w-full flex items-center justify-between p-2 rounded-md hover:brightness-150 duration-500">
             <div>
                 <div className="flex gap-2">
                     <h1>{props.fecha}</h1>

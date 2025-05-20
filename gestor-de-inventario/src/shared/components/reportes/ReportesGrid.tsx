@@ -1,43 +1,34 @@
-interface Resultado {
-    folioNota: string;
-    fechaNota: string;
-    proveedor: string;
-    nombre: string;
-    subtotal: string;
-    iva: string;
-    ieps: string;
-    totalDevolucion: string;
-  }
-  
+
   
   interface Props {
-    columns: string[];
-    resultados : Resultado[];
-  }
+    columnas: string[];
+    data : any[]
+}
   
 
 
-export default function ReportesGrid({columns,resultados} : Props) {
-
-    const totalesSubtotal = resultados.reduce((acc,resultado)=>{
-        return acc + parseFloat(resultado.subtotal)
-    },0)
-    const totalesIva = resultados.reduce((acc,resultado)=>{
-        return acc + parseFloat(resultado.iva)
-    },0)
-
-    const totalesIEPS = resultados.reduce((acc,resultado)=>{
-        return acc + parseFloat(resultado.ieps)
-    },0)
-
-    const totalesTotalDevolucion = resultados.reduce((acc,resultado)=>{
-        return acc + parseFloat(resultado.totalDevolucion)
-    },0)
+export default function ReportesGrid({columnas,data} : Props) {
+    const totalesSubtotal = Math.round(data.reduce((acc, registro) => {
+        return acc + parseFloat(registro.subtotal);
+    }, 0) * 100) / 100;
+    
+    const totalesIva = Math.round(data.reduce((acc, registro) => {
+        return acc + parseFloat(registro.iva);
+    }, 0) * 100) / 100;
+    
+    const totalesIEPS = Math.round(data.reduce((acc, registro) => {
+        return acc + parseFloat(registro.ieps);
+    }, 0) * 100) / 100;
+    
+    const totalesTotalDevolucion = Math.round(data.reduce((acc, registro) => {
+        return acc + parseFloat(registro.total);
+    }, 0) * 100) / 100;
+    
 
   return (
-    <section className="w-full h-full grid" style={{gridTemplateColumns: `repeat(${columns.length}, 1fr)`,gridAutoRows: "minmax(20px, 75px)"}}>
+    <section className="w-full h-full grid" style={{gridTemplateColumns: `repeat(${columnas.length}, 1fr)`,gridAutoRows: "minmax(20px, 75px)"}}>
         {
-            columns.map((column)=>{
+            columnas.map((column)=>{
                 return(
                     <div className="h-fit px-4">
                         <h1 className="font-semibold h-fit text-start">{column}</h1>
@@ -46,31 +37,35 @@ export default function ReportesGrid({columns,resultados} : Props) {
             })
         }
         {
-            resultados.map((resultado,index)=>{
+            data.map((registro,index)=>{
+                const fecha = new Date(registro.fecha_creacion)
+                const dia = fecha.getDate()
+                const mes = fecha.getMonth() + 1
+                const anio = fecha.getFullYear()
                 if(index % 2 === 0){
                     return(
                         <>
-                            <div className="bg-[#78de7e25] px-2 text-start"><h1 className="font-semibold text-xs">{resultado.folioNota}</h1></div>
-                            <div className="bg-[#78de7e25] px-2 text-start "><h1 className="font-semibold text-xs">{resultado.fechaNota}</h1></div>
-                            <div className="bg-[#78de7e25] px-2 text-start"><h1 className="font-semibold text-xs">{resultado.proveedor}</h1></div>
-                            <div className="bg-[#78de7e25] px-2 text-start"><h1 className="font-semibold text-xs">{resultado.nombre}</h1></div>
-                            <div className="bg-[#78de7e25] px-2 text-start"><h1 className="font-semibold text-xs">${resultado.subtotal}</h1></div>
-                            <div className="bg-[#78de7e25] px-2 text-start"><h1 className="font-semibold text-xs">${resultado.iva}</h1></div>
-                            <div className="bg-[#78de7e25] px-2 text-start"><h1 className="font-semibold text-xs">${resultado.ieps}</h1></div>
-                            <div className="bg-[#78de7e25] px-2 text-start"><h1 className="font-semibold text-xs">${resultado.totalDevolucion}</h1></div>
+                            <div className="bg-[#78de7e25] px-2 text-start"><h1 className="font-semibold text-xs">{registro.id}</h1></div>
+                            <div className="bg-[#78de7e25] px-2 text-start "><h1 className="font-semibold text-xs">{dia} - {mes} - {anio}</h1></div>
+                            <div className="bg-[#78de7e25] px-2 text-start"><h1 className="font-semibold text-xs">{registro.proveedor_id}</h1></div>
+                            <div className="bg-[#78de7e25] px-2 text-start"><h1 className="font-semibold text-xs">{registro.proveedor_nombre}</h1></div>
+                            <div className="bg-[#78de7e25] px-2 text-start"><h1 className="font-semibold text-xs">${registro.total}</h1></div>
+                            <div className="bg-[#78de7e25] px-2 text-start"><h1 className="font-semibold text-xs">${registro.iva}</h1></div>
+                            <div className="bg-[#78de7e25] px-2 text-start"><h1 className="font-semibold text-xs">${registro.ieps}</h1></div>
+                            <div className="bg-[#78de7e25] px-2 text-start"><h1 className="font-semibold text-xs">${registro.total}</h1></div>
                         </>
                         )
                 }else{
                     return(
                         <>
-                            <div className="px-2 text-start"><h1 className="font-semibold text-xs">{resultado.folioNota}</h1></div>
-                            <div className="px-2 text-start"><h1 className="font-semibold text-xs">{resultado.fechaNota}</h1></div>
-                            <div className="px-2 text-start"><h1 className="font-semibold text-xs">{resultado.proveedor}</h1></div>
-                            <div className="px-2 text-start"><h1 className="font-semibold text-xs">{resultado.nombre}</h1></div>
-                            <div className="px-2 text-start"><h1 className="font-semibold text-xs">${resultado.subtotal}</h1></div>
-                            <div className="px-2 text-start"><h1 className="font-semibold text-xs">${resultado.iva}</h1></div>
-                            <div className="px-2 text-start"><h1 className="font-semibold text-xs">${resultado.ieps}</h1></div>
-                            <div className="px-2 text-start"><h1 className="font-semibold text-xs">${resultado.totalDevolucion}</h1></div>
+                            <div className="px-2 text-start"><h1 className="font-semibold text-xs">{registro.id}</h1></div>
+                            <div className="px-2 text-start"><h1 className="font-semibold text-xs">{dia} - {mes} - {anio}</h1></div>
+                            <div className="px-2 text-start"><h1 className="font-semibold text-xs">{registro.proveedor_id}</h1></div>
+                            <div className="px-2 text-start"><h1 className="font-semibold text-xs">{registro.proveedor_nombre}</h1></div>
+                            <div className="px-2 text-start"><h1 className="font-semibold text-xs">${registro.total}</h1></div>
+                            <div className="px-2 text-start"><h1 className="font-semibold text-xs">${registro.iva}</h1></div>
+                            <div className="px-2 text-start"><h1 className="font-semibold text-xs">${registro.ieps}</h1></div>
+                            <div className="px-2 text-start"><h1 className="font-semibold text-xs">${registro.total}</h1></div>
                         </>
                     )
 

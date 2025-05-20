@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
     CartesianGrid,
     Line,
@@ -7,50 +8,74 @@ import {
     XAxis,
     YAxis
 } from "recharts";
+import { getCantidadOrdenesDeCompraPorAño } from "../../../backend/routes/api/functions/Operaciones/OrdenesDeCompra";
 
-const ordenesPorMes = [
-    { mes: "Enero", cantidad: 12 },
-    { mes: "Febrero", cantidad: 18 },
-    { mes: "Marzo", cantidad: 25 },
-    { mes: "Abril", cantidad: 37 },  // Ejemplo real con tus datos: 14 días = 14 órdenes o sumar cantidades
-    { mes: "Mayo", cantidad: 9 },
-    { mes: "Junio", cantidad: 15 },
-    { mes: "Julio", cantidad: 22 },
-    { mes: "Agosto", cantidad: 19 },
-    { mes: "Septiembre", cantidad: 11 },
-    { mes: "Octubre", cantidad: 17 },
-    { mes: "Noviembre", cantidad: 13 },
-    { mes: "Diciembre", cantidad: 10 },
-  ];
+
+interface dataOperacionesPorAño{
+    nombre_mes : string
+    ordenes : number    
+}
 
 export default function OrdenesCompraMesGrafica(){
+
+    const [data,setData] = useState<dataOperacionesPorAño[]>([])
+    const [anio,setAnio] = useState<string>("2025")
+    const fetchData = async() =>{
+        if(anio){
+            setData(await getCantidadOrdenesDeCompraPorAño(anio))
+        }
+    };
+    useEffect(() =>{
+       fetchData()
+    },[])
+    useEffect(() =>{
+        fetchData()
+    },[anio])
+    const handleOnChangeSelect = (e : React.ChangeEvent<HTMLSelectElement>)=>{
+        setAnio(e.target.value)
+        }
+        console.log(data)
     return(
-         <div className="w-full h-full flex flex-col items-center gap-2 border border-black bg-white p-0 rounded-md">
-            <h1 className="font-bold">Ordenes de compra por mes (2025)</h1>
-             <ResponsiveContainer width="100%" height="100%">
-                            <LineChart
-                                width={500}
-                                height={300}
-                                data={ordenesPorMes}
-                                margin={{
-                                    top: 5,
-                                    right: 30,
-                                    bottom: 5,
-                                }}
-                            >
-                                <CartesianGrid strokeDasharray="1 1" stroke="black"  />
-                                <XAxis dataKey="mes" fontSize={"18px"}stroke="black" tick = {{fill : "black"}} />
-                                <YAxis />
-                                <Tooltip />
-                                <Line
-                                    type="monotone"
-                                    dataKey="cantidad"
-                                    stroke={"orange"}
-                                    activeDot={{ r: 8 }}
-                                    strokeWidth={2}
-                                />
-                            </LineChart>
-                        </ResponsiveContainer>
-         </div>
+        <div className="w-full h-[300px] flex flex-col items-center gap-2 bg-[#1a1b22] p-2 rounded-md">
+            <h1 className="font-bold text-white">Ordenes de compra por mes ({anio})</h1>
+            <div className="flex items-center gap-4">
+                <h1 className="text-white font-bold">Selecciona el año</h1>
+                <select name="anio_select" id="anio_select" className="bg-[#3e4051] rounded-md text-white" onChange={handleOnChangeSelect} value={anio}>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                </select>
+            </div>
+                {
+                data.length > 0 ?
+                <ResponsiveContainer width="100%" height="100%">
+                    <LineChart
+                        width={500}
+                        height={300}
+                        data={data}
+                        margin={{
+                            top: 5,
+                            right: 30,
+                            bottom: 5,
+                        }}
+                    >
+                        <CartesianGrid strokeDasharray="1 1" stroke="white"  />
+                        <XAxis dataKey={"nombre_mes"} fontSize={"18px"}stroke="white" tick = {{fill : "white"}} />
+                        <YAxis/>
+                        <Tooltip contentStyle={{backgroundColor : "black"}}/> 
+                        <Line
+                            type="monotone"
+                            stroke={"orange"}
+                            dataKey="ordenes"
+                            activeDot={{ r: 8 }}
+                            strokeWidth={2}
+                        />
+                    </LineChart>
+                    </ResponsiveContainer> : <h1 className="text-white">No se encontraron Ordenes de Compra de ese Año</h1>
+                }
+        </div>
     )
 }

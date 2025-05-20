@@ -15,12 +15,10 @@ export default function OrdenesCompraRecientes() {
         { fecha: "2025-04-25", hora: "12:20", proveedor: "FEMSA", estado: "Cancelada" },
         { fecha: "2025-04-28", hora: "14:10", proveedor: "Telefónica", estado: "Pendiente" },
       ];
-      
-
     return (
-        <section className="flex flex-col w-full h-full border border-black items-center gap-2 rounded-md  overflow-y-auto scrollbarclass bg-white" >
+        <section className="flex flex-1  flex-col h-full items-center gap-2 rounded-md p-2 max-h-[400px] overflow-y-auto scrollbarclass bg-[#1a1b22] text-white" >
             <h1 className="font-bold">Ordenes de compra recientes</h1>
-            <div className="w-full flex flex-col gap-2 p-2">{
+            <div className="w-full flex flex-col gap-2">{
                     ordenesDeCompra.length == 0 ? <h1 className="font-semibold text-center">Aqui se mostraran las ordenes de compra recientes</h1> : 
                     (
                         ordenesDeCompra.map((ordenCompra) => {
